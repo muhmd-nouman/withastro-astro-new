@@ -1,0 +1,32 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+import { getPost, formatWordPressPost } from '../../lib/wordpress.js';
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+let post = null;
+try {
+	const wpPost = await getPost(slug);
+	if (wpPost) {
+		post = formatWordPressPost(wpPost);
+	}
+} catch (error) {
+	console.error('Error fetching post:', error);
+}
+
+if (!post) {
+	return Astro.redirect('/404');
+}
+---
+
+<BlogPost 
+	title={post.title}
+	description={post.excerpt.replace(/<[^>]*>/g, '').substring(0, 160)}
+	pubDate={post.date}
+	updatedDate={post.modified}
+	heroImage={post.featuredImage?.source_url}
+>
+	<Fragment set:html={post.content} />
+</BlogPost>
