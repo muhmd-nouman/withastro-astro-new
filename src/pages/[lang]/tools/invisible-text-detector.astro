@@ -1,0 +1,30 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import InvisibleCharacterDetector from "@/components/InvisibleCharacterDetector/index.astro";
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+    // Add more languages as needed
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<Layout title="Invisible Text Viewer - Decode Invisble Characters for Free">
+  <div class="max-w-6xl mx-auto py-10 px-6 container">
+    <h1 class="text-center text-4xl font-bold mb-8">Invisible Text Viewer</h1>
+    <InvisibleCharacterDetector />
+  </div>
+</Layout>

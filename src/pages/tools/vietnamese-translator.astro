@@ -1,0 +1,86 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Vietnamese Translator" 
+  description="Translate common English phrases to Vietnamese with our free online translator"
+>
+  <TextTransformer 
+    client:load
+    title="Vietnamese Translator" 
+    description="Convert English phrases and words to Vietnamese" 
+    transformType="vietnamese"
+    placeholder="Enter English text to translate to Vietnamese..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Vietnamese Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Vietnamese Translator helps you convert common English phrases and words into Vietnamese. This tool is perfect for learning basic Vietnamese phrases or adding Vietnamese text to your projects.</p>
+          <p>Vietnamese is the official language of Vietnam and is spoken by over 95 million people worldwide. It's a tonal language with six different tones that can change the meaning of words.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Supported Translations</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Greetings:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>hello → xin chào</li>
+                <li>goodbye → tạm biệt</li>
+                <li>good morning → chào buổi sáng</li>
+                <li>good evening → chào buổi tối</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Common Phrases:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>thank you → cảm ơn</li>
+                <li>please → xin vui lòng</li>
+                <li>yes → có</li>
+                <li>no → không</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Family & Emotions:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>family → gia đình</li>
+                <li>friend → bạn</li>
+                <li>happy → hạnh phúc</li>
+                <li>sad → buồn</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Common Words:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>water → nước</li>
+                <li>food → thức ăn</li>
+                <li>house → nhà</li>
+                <li>beautiful → đẹp</li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Learning basic Vietnamese phrases</li>
+            <li>Travel preparation to Vietnam</li>
+            <li>Cultural exchange projects</li>
+            <li>Educational materials</li>
+            <li>Adding Vietnamese text to designs</li>
+            <li>Language learning practice</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">About Vietnamese Language</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Uses Latin alphabet with additional diacritical marks</li>
+            <li>Six tones that change word meanings</li>
+            <li>No verb conjugations or plural forms</li>
+            <li>Word order is Subject-Verb-Object</li>
+            <li>Rich cultural and historical significance</li>
+          </ul>
+          <p class="mt-4">Note: This translator covers basic phrases and common words. For complex translations, consider using professional translation services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

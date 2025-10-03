@@ -1,0 +1,56 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Half-Elf Name Generator" 
+  description="Generate unique half-elf names for your fantasy characters, D&D campaigns, and creative writing"
+>
+  <TextTransformer 
+    client:load
+    title="Half-Elf Name Generator" 
+    description="Create authentic half-elf names blending human and elven heritage" 
+    transformType="halfelf"
+    placeholder=""
+    isGenerator={true}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Half-Elf Name Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Half-Elf Name Generator creates unique names that blend the elegant, flowing sounds of elven names with the more grounded, familiar patterns of human names, perfectly capturing the dual heritage of half-elves.</p>
+          <p>Half-elves in fantasy literature and games often struggle with their identity, belonging to neither fully human nor fully elven society. Their names reflect this duality, combining elements from both cultures.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Name Generation Method</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Elven Prefixes:</strong> Flowing, melodic sounds like "Ael", "Ara", "Gil", "Sil"</li>
+            <li><strong>Human Suffixes:</strong> Familiar endings like "an", "er", "ic", "yn"</li>
+            <li><strong>Human Prefixes:</strong> Strong, grounded sounds like "Ber", "Gar", "Kael", "Tar"</li>
+            <li><strong>Elven Suffixes:</strong> Elegant endings like "adan", "anel", "eron", "thir"</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Dungeons & Dragons characters</li>
+            <li>Fantasy novel characters</li>
+            <li>Role-playing game campaigns</li>
+            <li>Creative writing projects</li>
+            <li>World-building and storytelling</li>
+            <li>Video game character creation</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Half-Elf Characteristics</h3>
+          <p>Half-elves typically possess:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Longer lifespans than humans but shorter than elves</li>
+            <li>Enhanced senses and some magical affinity</li>
+            <li>Adaptability and versatility in skills</li>
+            <li>Often serve as bridges between human and elven communities</li>
+            <li>May struggle with identity and belonging</li>
+          </ul>
+          <p class="mt-4">Click the generate button to create new half-elf names that capture the essence of this unique heritage!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

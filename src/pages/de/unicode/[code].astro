@@ -1,0 +1,23 @@
+---
+import CharacterDetail from '@/components/CharacterDetails.astro';
+import { getLangFromUrl } from '@/utils/i18n';
+import { unicodeData } from '@/data/unicodeData';
+import Layout from '@/layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return unicodeData.map((char) => ({
+    params: { code: char.code.toLowerCase() },
+    props: { char },
+  }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { char } = Astro.props;
+const title = `Unicode ${char.code} - ${char.category} Symbol | Kopieren (${char.symbol})`;
+const description =`${char.symbol} Unicode ${char.decimal}, bekannt als ${char.code}. Kopiere und füge ${char.code} ganz einfach für deine Bedürfnisse ein. Perfekt für Formatierungstricks und mehr!`;
+
+export const prerender = true;
+---
+<Layout title={title} description={description}>
+  <CharacterDetail char={char} lang={lang} />
+</Layout>

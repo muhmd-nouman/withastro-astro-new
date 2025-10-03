@@ -1,0 +1,84 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Creepy Fonts Generator" 
+  description="Create scary, horror, and creepy text effects perfect for Halloween, horror projects, and spooky content"
+>
+  <TextTransformer 
+    client:load
+    title="Creepy Fonts Generator" 
+    description="Transform your text into spine-chilling creepy fonts" 
+    transformType="creepy"
+    placeholder="Enter your text to create creepy effects..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Creepy Fonts Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Creepy Fonts Generator creates spine-chilling, horror-inspired text effects that are perfect for Halloween content, horror projects, scary stories, and any content that needs to evoke fear, suspense, or supernatural dread.</p>
+          <p>These fonts use various Unicode techniques including zalgo text, corrupted characters, and horror-themed symbols to create text that appears disturbing, otherworldly, or supernaturally corrupted.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Creepy Font Effects</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Creepy Substitutions:</strong> Replaces letters with unsettling character variants</li>
+            <li><strong>Zalgo Text:</strong> Corrupted text with chaotic combining characters</li>
+            <li><strong>Strikethrough Horror:</strong> Text that appears crossed out or damaged</li>
+            <li><strong>Slash Overlay:</strong> Characters with diagonal slashes for a broken effect</li>
+            <li><strong>Skull Wrapped:</strong> Text surrounded by skull emojis</li>
+            <li><strong>Ghost Separated:</strong> Characters separated by ghost emojis</li>
+            <li><strong>Spider Wrapped:</strong> Text enclosed in spider symbols</li>
+            <li><strong>Random Case:</strong> Chaotic capitalization for unsettling effect</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Halloween decorations and invitations</li>
+            <li>Horror movie titles and posters</li>
+            <li>Scary story titles and headers</li>
+            <li>Haunted house and escape room signage</li>
+            <li>Horror game interfaces and text</li>
+            <li>Gothic and dark art projects</li>
+            <li>Creepypasta and horror fiction</li>
+            <li>Spooky social media content</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Horror Typography History</h3>
+          <p>Creepy fonts draw inspiration from:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Classic Horror Films:</strong> 1930s-1980s movie poster typography</li>
+            <li><strong>Gothic Literature:</strong> Victorian-era book covers and manuscripts</li>
+            <li><strong>Haunted Attractions:</strong> Theme park and haunted house signage</li>
+            <li><strong>Comic Book Horror:</strong> EC Comics and horror comic lettering</li>
+            <li><strong>Digital Glitch Art:</strong> Modern corrupted text aesthetics</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Psychological Impact</h3>
+          <p>Creepy fonts work by:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Disrupting Expectations:</strong> Breaking normal text patterns</li>
+            <li><strong>Creating Unease:</strong> Using irregular and chaotic elements</li>
+            <li><strong>Evoking Decay:</strong> Suggesting corruption or deterioration</li>
+            <li><strong>Building Atmosphere:</strong> Setting a mood before content is read</li>
+            <li><strong>Triggering Associations:</strong> Connecting to horror media memories</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Usage Guidelines</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Use sparingly for maximum impact</li>
+            <li>Ensure text remains readable despite effects</li>
+            <li>Consider your audience and context appropriateness</li>
+            <li>Test on different devices for proper display</li>
+            <li>Pair with appropriate imagery and themes</li>
+            <li>Be mindful of accessibility and readability</li>
+          </ul>
+          <div class="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4">
+            <p class="text-orange-800 dark:text-orange-200">
+              <strong>Content Warning:</strong> These fonts are designed for horror and scary content. Use appropriately and consider your audience's comfort level with horror-themed material.
+            </p>
+          </div>
+          <p class="mt-4">👻 Ready to give your text a spine-chilling makeover? 🕷️</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

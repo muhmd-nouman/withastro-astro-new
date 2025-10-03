@@ -2,8 +2,8 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import Header from '@/components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 import { getAllPosts, formatWordPressPost } from '../../lib/wordpress.js';
 
 export const prerender = false;
@@ -26,6 +26,8 @@ try {
 		<style>
 			main {
 				width: 960px;
+				margin: 0 auto;
+				padding: 1em;
 			}
 			ul {
 				display: flex;

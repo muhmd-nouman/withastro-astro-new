@@ -1,0 +1,45 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Cursive Text Generator" 
+  description="Convert your text into elegant cursive script with our free online cursive text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Cursive Text Generator" 
+    description="Transform your text into flowing, elegant cursive script" 
+    transformType="cursive"
+    placeholder="Enter your text to convert it to cursive..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Cursive Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>Our Cursive Text Generator converts your standard text into elegant, flowing cursive script. This stylish font adds a touch of sophistication to your text that works great for quotes, captions, or anywhere you want your words to have a graceful appearance.</p>
+          <p>The cursive characters are created using special Unicode symbols, which means they'll retain their style when copied and pasted across most platforms and applications.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your text in the input box above</li>
+            <li>Watch as it's instantly converted to cursive script</li>
+            <li>Click the "Copy" button to copy the cursive text</li>
+            <li>Paste your elegant cursive text wherever you'd like</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Ideal Uses for Cursive Text</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Add elegance to social media captions and comments</li>
+            <li>Create sophisticated Instagram bios or Twitter profiles</li>
+            <li>Make your quotes stand out in messages</li>
+            <li>Design stylish signatures for digital correspondence</li>
+            <li>Enhance poetry or creative writing shared online</li>
+          </ul>
+          <p class="mt-4">Note: While these cursive characters work on most modern platforms, some systems or applications with limited Unicode support might not display them correctly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

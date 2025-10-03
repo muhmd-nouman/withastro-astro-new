@@ -1,0 +1,62 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Discord Bold Text Generator" 
+  description="Create bold text for Discord messages, usernames, and profiles with our Discord bold text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Discord Bold Text Generator" 
+    description="Generate bold text that works perfectly in Discord" 
+    transformType="discordbold"
+    placeholder="Enter your text to make it Discord-bold..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Discord Bold Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Discord Bold Text Generator creates bold text using Unicode characters that work perfectly in Discord messages, usernames, and profiles. Unlike Discord's built-in markdown formatting, this bold text works everywhere on Discord.</p>
+          <p>While Discord supports **bold** markdown formatting in messages, this Unicode bold text works in places where markdown doesn't, such as usernames, status messages, and server names.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your text in the input field above</li>
+            <li>See it instantly converted to Discord-compatible bold text</li>
+            <li>Click "Copy" to copy the bold text</li>
+            <li>Paste it anywhere in Discord - messages, usernames, status, etc.</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for Discord</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Usernames:</strong> Make your Discord username stand out</li>
+            <li><strong>Server Names:</strong> Create bold server names that grab attention</li>
+            <li><strong>Channel Names:</strong> Emphasize important channels</li>
+            <li><strong>Status Messages:</strong> Bold custom status text</li>
+            <li><strong>Messages:</strong> Alternative to markdown formatting</li>
+            <li><strong>Nicknames:</strong> Bold nicknames in servers</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Discord Formatting Comparison</h3>
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+            <p class="font-semibold mb-2">Discord Markdown vs Unicode Bold:</p>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+              <li><strong>Markdown:</strong> **text** (only works in messages)</li>
+              <li><strong>Unicode Bold:</strong> 𝗯𝗼𝗹𝗱 𝘁𝗲𝘅𝘁 (works everywhere)</li>
+            </ul>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Why Use Unicode Bold?</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Works in usernames where markdown doesn't</li>
+            <li>Compatible with all Discord features</li>
+            <li>Displays consistently across all devices</li>
+            <li>No special formatting knowledge required</li>
+            <li>Copy and paste anywhere</li>
+          </ul>
+          <p class="mt-4">Note: This bold text uses mathematical bold Unicode characters that are supported by Discord and most modern platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,96 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+<MainLayout 
+  title={t('metal.title')} 
+  description={t('metal.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('metal.title')} 
+    description={t('metal.tDesc')} 
+    transformType="metal"
+    placeholder={t('metal.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('metal.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('metal.p1')}</p>
+          <p>{t('metal.p2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('metal.features.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('metal.features.1')}</li>
+            <li>{t('metal.features.2')}</li>
+            <li>{t('metal.features.3')}</li>
+            <li>{t('metal.features.4')}</li>
+            <li>{t('metal.features.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('metal.uses.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('metal.uses.1')}</li>
+            <li>{t('metal.uses.2')}</li>
+            <li>{t('metal.uses.3')}</li>
+            <li>{t('metal.uses.4')}</li>
+            <li>{t('metal.uses.5')}</li>
+            <li>{t('metal.uses.6')}</li>
+            <li>{t('metal.uses.7')}</li>
+            <li>{t('metal.uses.8')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('metal.history.title')}</h3>
+          <p>{t('metal.history.intro')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('metal.history.1')}</li>
+            <li>{t('metal.history.2')}</li>
+            <li>{t('metal.history.3')}</li>
+            <li>{t('metal.history.4')}</li>
+            <li>{t('metal.history.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('metal.famous.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('metal.famous.1')}</li>
+            <li>{t('metal.famous.2')}</li>
+            <li>{t('metal.famous.3')}</li>
+            <li>{t('metal.famous.4')}</li>
+            <li>{t('metal.famous.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('metal.tips.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('metal.tips.1')}</li>
+            <li>{t('metal.tips.2')}</li>
+            <li>{t('metal.tips.3')}</li>
+            <li>{t('metal.tips.4')}</li>
+            <li>{t('metal.tips.5')}</li>
+          </ul>
+
+          <p class="mt-4">{t('metal.outro')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

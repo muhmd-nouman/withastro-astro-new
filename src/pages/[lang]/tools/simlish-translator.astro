@@ -1,0 +1,110 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+
+---
+
+<MainLayout 
+  title={t('simlish.title')} 
+  description={t('simlish.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('simlish.title')} 
+    description={t('simlish.tDesc')} 
+    transformType="simlish"
+    placeholder={t('simlish.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('simlish.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('simlish.p1')}</p>
+          <p>{t('simlish.p2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('simlish.how.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('simlish.how.1')}</li>
+            <li>{t('simlish.how.2')}</li>
+            <li>{t('simlish.how.3')}</li>
+            <li>{t('simlish.how.4')}</li>
+            <li>{t('simlish.how.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('simlish.phrases.title')}</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Common Greetings:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('simlish.phrases.1')}</li>
+                <li>{t('simlish.phrases.2')}</li>
+                <li>{t('simlish.phrases.3')}</li>
+                <li>{t('simlish.phrases.4')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Expressions:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('simlish.phrases.5')}</li>
+                <li>{t('simlish.phrases.6')}</li>
+                <li>{t('simlish.phrases.7')}</li>
+                <li>{t('simlish.phrases.8')}</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('simlish.perfect.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('simlish.perfect.1')}</li>
+            <li>{t('simlish.perfect.2')}</li>
+            <li>{t('simlish.perfect.3')}</li>
+            <li>{t('simlish.perfect.4')}</li>
+            <li>{t('simlish.perfect.5')}</li>
+            <li>{t('simlish.perfect.6')}</li>
+            <li>{t('simlish.perfect.7')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('simlish.legacy.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('simlish.legacy.1')}</li>
+            <li>{t('simlish.legacy.2')}</li>
+            <li>{t('simlish.legacy.3')}</li>
+            <li>{t('simlish.legacy.4')}</li>
+            <li>{t('simlish.legacy.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('simlish.facts.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('simlish.facts.1')}</li>
+            <li>{t('simlish.facts.2')}</li>
+            <li>{t('simlish.facts.3')}</li>
+            <li>{t('simlish.facts.4')}</li>
+            <li>{t('simlish.facts.5')}</li>
+          </ul>
+
+          <p class="mt-4">{t('simlish.ending')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

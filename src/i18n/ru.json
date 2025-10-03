@@ -1,0 +1,33 @@
+{
+  "site": {
+    "seo.title": "Символы и символы Unicode - Невидимые символы",
+    "description": "Исследуйте увлекательный мир символов Unicode"
+  },
+  "nav": {
+    "home": "Главная",
+    "unicode": "Список Unicode",
+    "categories": "Категории"
+  },
+  "unicode": {
+    "details": "Детали",
+    "category": "Категория",
+    "decimal": "Десятичное",
+    "htmlEntity": "HTML-сущность",
+    "content": {
+      "title": "О символе",
+      "usage": "Обычное использование",
+      "history": "История",
+      "technical": "Технические детали"
+    },
+    "related": {
+      "title": "Похожие символы Unicode",
+      "category": "Больше из этой категории",
+      "similar": "Похожие символы"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Главная",
+    "unicode": "Unicode",
+    "categories": "Категории"
+  }
+}

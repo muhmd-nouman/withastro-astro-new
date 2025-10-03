@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CldImage } from "astro-cloudinary";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const imageData = [
+  {
+    src: "Gaming-Image_l76lud",
+    alt: t("use.gaming.alt"),
+    title: t("Gaming"),
+    description: t("W2U.Gaming"),
+  },
+  {
+    src: "Invisible-Comment-Image_uggil3",
+    alt: t("W2U.Invisible.Comments.alt"),
+    title: t("W2U.Invisible.Comments"),
+    description: t("W2U.comments.description"),
+  },
+  {
+    src: "Social-Media-Image_pw9zxz",
+    alt: t("W2U.SocialMedia.alt"),
+    title: t("W2U.SocialMedia.title"),
+    description: t("W2U.SocialMedia"),
+  },
+  {
+    src: "Invisible-Message-Image_ptwugb",
+    alt: t("W2U.InvisibleMessages.alt"),
+    title: t("W2U.InvisibleMessages.title"),
+    description: t("W2U.InvisibleMessages"),
+  },
+  {
+    src: "Passwords-Image_tiaetd",
+    alt: t("W2U.PasswordSecurity.alt"),
+    title: t("W2U.PasswordSecurity.title"),
+    description: t("W2U.PasswordSecurity"),
+  },
+];
+---
+
+<section class="container mx-auto px-6 md:px-8 py-16">
+  <div class="flex justify-center">
+    <span
+      class="mx-auto rounded-full bg-black text-white text-md px-6 py-1 my-4"
+    >
+      {t("W2U.ButtonUses")}
+    </span>
+  </div>
+  <div class="space-y-6">
+    <h2
+      class="text-2xl md:text-3xl lg:text-3xl text-center font-bold mb-4 text-black pt-0"
+    >
+      {t("W2U.SectionTitle")}
+    </h2>
+    <p class="text-md md:text-lg text-black text-center max-w-4xl mx-auto mb-8">
+      {t("W2U.SectionDescription")}
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+      {
+        imageData.map((image, index) => (
+          <div
+            class={`w-full ${index === 2 ? "md:col-span-2 max-w-md mx-auto" : ""}`}
+          >
+            <div class="relative border rounded-lg shadow-md overflow-hidden group">
+              <CldImage
+                src={image.src}
+                alt={image.alt}
+                width={800}
+                height={700}
+                class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 flex flex-col items-center bg-accent justify-center bg-white bg-opacity-90 opacity-0 transition-opacity duration-300 group-hover:opacity-100 select-none p-6">
+                <h3 class="text-xl md:text-2xl font-semibold text-center text-black mb-4">
+                  {image.title}
+                </h3>
+                <p class="text-md md:text-md text-black text-center overflow-scroll">
+                  {image.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

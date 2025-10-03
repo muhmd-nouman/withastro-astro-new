@@ -1,0 +1,24 @@
+---
+import CharacterDetail from '@/components/CharacterDetails.astro';
+import { getLangFromUrl } from '@/utils/i18n';
+import { unicodeData } from '@/data/unicodeData';
+import Layout from '@/layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return unicodeData.map((char) => ({
+    params: { code: char.code.toLowerCase() },
+    props: { char },
+  }));
+}
+const { char } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const displayName = char.name?.[lang] ?? char.name?.["en"] ?? "Unknown";
+const displayDesc = char.description?.[lang] ?? char.description?.["en"] ?? "";
+const title = `Unicode ${char.decimal} - ${char.name} Symbool | Kopiëren en Plakken (${char.symbol}) Teken`;
+const description = `${char.symbol} Unicode ${char.decimal}, bekend als ${char.symbol}. Kopieer en plak ${char.code} eenvoudig voor je behoeften. Perfect voor opmaaktrucs, en meer!`;
+export const prerender = true;
+
+---
+<Layout title={title} description={description}>
+  <CharacterDetail char={char} lang={lang} />
+</Layout>

@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  authorImage?: string;
+  slug: string;
+  tags?: string[];
+  image?: string;
+}
+
+const { title, description, pubDate, author, authorImage, slug, tags = [], image } = Astro.props;
+
+// Format date
+const formattedDate = new Date(pubDate).toISOString().slice(0, 10);
+---
+
+<article class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md">
+  <a href={`/blog/${slug}/`} class="block overflow-hidden hover:text-gray-400">
+    {/* Image Section */}
+    <div class="relative aspect-video w-full overflow-hidden">
+      {image ? (
+        <img 
+          src={image} 
+          alt={title} 
+          class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" 
+        />
+      ) : (
+        <div class="flex h-full w-full items-center justify-center bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-12 w-12 text-gray-300">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+        </div>
+      )}
+    </div>
+  </a>
+  
+  <div class="p-6">
+    <div class="flex items-center gap-3">
+      {authorImage ? (
+        <img src={authorImage} alt={author} class="h-8 w-8 rounded-full object-cover" />
+      ) : (
+        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-xs text-gray-600">
+          {author.charAt(0)}
+        </div>
+      )}
+      <span class="text-sm text-gray-600">{author}</span>
+      <span class="text-sm text-gray-400">{formattedDate}</span>
+    </div>
+    
+    <h2 class="mt-4 text-xl font-bold">
+      <a href={`/blog/${slug}/`} class="hover:text-gray-600">{title}</a>
+    </h2>
+    
+    <p class="mt-2 text-gray-600">{description}</p>
+    
+    <div class="mt-4 flex flex-wrap gap-2">
+      {tags.map(tag => (
+        <a href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}/`} 
+           class="inline-flex items-center rounded-full bg-gray-100 hover:bg-black px-3 py-1 text-xs text-gray-800 transition-colors hover:bg-primary-100 hover:text-white">
+          {tag}
+        </a>
+      ))}
+      <a href={`/blog/${slug}/`} class="ml-auto inline-flex items-center text-xs font-medium text-primary-600 transition-colors hover:text-gray-400">
+        +1
+      </a>
+    </div>
+  </div>
+</article>

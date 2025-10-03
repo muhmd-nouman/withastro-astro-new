@@ -1,0 +1,73 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+    // Add more languages as needed
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t("toolCategory.textGenerators.bubble.title")} 
+  description={t("toolCategory.textGenerators.bubble.description")}
+>
+  <TextTransformer 
+    client:load
+    title={t("toolCategory.textGenerators.bubble.title")} 
+    description={t("bubbleText.description")} 
+    transformType="bubble"
+    placeholder={t("bubbleText.input.placeholder")}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("bubbleText.about.title")}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t("bubbleText.about.p1")}</p>
+          <p>{t("bubbleText.about.p2")}</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("bubbleText.usage.title")}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t("bubbleText.usage.step1")}</li>
+            <li>{t("bubbleText.usage.step2")}</li>
+            <li>{t("bubbleText.usage.step3")}</li>
+            <li>{t("bubbleText.usage.step4")}</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("bubbleText.uses.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("bubbleText.uses.socialMedia")}</li>
+            <li>{t("bubbleText.uses.usernames")}</li>
+            <li>{t("bubbleText.uses.messages")}</li>
+            <li>{t("bubbleText.uses.headers")}</li>
+            <li>{t("bubbleText.uses.lists")}</li>
+            <li>{t("bubbleText.uses.kids")}</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("bubbleText.features.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("bubbleText.features.lettersNumbers")}</li>
+            <li>{t("bubbleText.features.readable")}</li>
+            <li>{t("bubbleText.features.compatible")}</li>
+            <li>{t("bubbleText.features.lists")}</li>
+          </ul>
+          <p class="mt-4">{t("bubbleText.note")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

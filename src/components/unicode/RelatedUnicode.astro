@@ -1,0 +1,116 @@
+---
+import type { UnicodeCharacter } from "../../types";
+import UnicodeCard from "./UnicodeCard.astro";
+import { getLangFromUrl, useTranslations } from "../../utils/i18n";
+
+interface Props {
+  currentChar: UnicodeCharacter;
+  allChars: UnicodeCharacter[];
+}
+
+const { currentChar, allChars } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get characters from the same category
+const sameCategory = allChars
+  .filter(
+    (char) =>
+      char.category === currentChar.category && char.code !== currentChar.code,
+  )
+  .slice(0, 6);
+
+// Get characters with similar properties or usage
+const similar = allChars
+  .filter(
+    (char) => char.code !== currentChar.code && !sameCategory.includes(char),
+  )
+  .slice(0, 6);
+---
+
+<section class="related-unicodes px-6">
+  <h2 class="text-xl font-black text-center">{t("unicode.related.title")}</h2>
+
+  {
+    similar.length > 0 && (
+      <div class="category-section ">
+        <div class="scroll-container">
+          <div class="unicode-row">
+            {similar.map((char) => (
+              <div class="card-container">
+                <UnicodeCard
+                  symbol={char.symbol}
+                  name={char.name[lang]}
+                  code={char.code}
+                  description={char.description[lang]}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .related-unicodes {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--secondary);
+  }
+
+  h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    color: var(--primary);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.2rem;
+  }
+
+  .category-section {
+    margin-bottom: 2rem;
+  }
+
+  .scroll-container {
+    overflow-x: auto;
+    
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) transparent;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 3px;
+  }
+
+  .unicode-row {
+    display: flex;
+    gap: 1rem;
+    
+  }
+
+  .card-container {
+    flex: 0 0 200px;
+    min-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      flex: 0 0 180px;
+      min-width: 300px;
+    }
+  }
+</style>

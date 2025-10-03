@@ -1,0 +1,149 @@
+---
+import { coolSymbolCategories } from '@/utils/coolSymbols';
+import Layout from '@/layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "How can I use these symbols?",
+    answer: "Simply click on any symbol to copy it to your clipboard, then paste it wherever you want to use it."
+  },
+  {
+    question: "Will these symbols work everywhere?",
+    answer: "Most modern platforms support these Unicode symbols, but some older systems might display them differently."
+  }
+];
+const lang = "pt";
+const title = "Símbolos Legais - Copiar e Colar Símbolos | InvisibleSymbol";
+const description = "Copie e cole símbolos legais, símbolos invisíveis e caracteres especiais da nossa coleção.";
+---
+<Layout title={title} description={description}>
+  <div class="mx-auto space-y-8 sm:space-y-8">
+    <header class="max-w-4xl mx-auto px-6 py-6">
+      <h1 class="text-4xl sm:text-3xl font-bold text-center text-gray-900 mb-2 sm:mb-4">Símbolos Legais</h1>
+      <p class="text-md md:text-lg text-gray-600 text-center px-2 sm:px-0">Os símbolos legais são caracteres e ícones únicos que melhoram o interesse visual e expressam emoções ou ideias utilizando símbolos únicos. Eles são amplamente utilizados em redes sociais, aplicativos de mensagens e sites para tornar o conteúdo mais atraente.</p>
+    </header>
+
+    <section class="text-center px-6">
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">Como Funciona</h2>
+      <p class="mb-4 sm:mb-6 text-md md:text-lg text-gray-600 text-center">
+          Toque em qualquer símbolo para ver seus detalhes, depois toque em 
+          <span class="text-blue-500 font-semibold">"Copiar para a área de transferência"</span> para copiá-lo.
+      </p>
+    </section>
+    
+    <section class="space-y-4 sm:space-y-6 px-6">
+      {coolSymbolCategories.map(category => (
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">{category.name}</h3>
+          <div class="grid grid-cols-4 xs:grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-4">
+            {category.symbols.map(symbol => (
+              <div class="relative group items-center">
+                <button
+                  class="w-full aspect-square flex items-center justify-center text-5xl md:text-6xl lg:text-7xl bg-gray-100 rounded-lg hover:bg-gray-100 transition-all duration-200"
+                  aria-label={`Copiar ${symbol.name}`}
+                >
+                  {symbol.char}
+                </button>
+                
+                <!-- Tooltip amigável para dispositivos móveis -->
+                <div class="border-black opacity-0 bg-black invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 absolute z-10 w-36 sm:w-48 p-3 sm:p-4 bg-white rounded-lg shadow-lg -translate-x-1/2 left-1/2 top-full mt-2">
+                  <div class="text-4xl sm:text-4xl text-center mb-2">{symbol.char}</div>
+                  <div class="text-xs sm:text-sm text-gray-600 text-center mb-2">{symbol.name}</div>
+                  <button
+                    type="button"
+                    class="copy-btn w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-blue-500 text-white text-sm rounded hover:bg-black transition-colors duration-200"
+                    data-symbol={symbol.char}
+                  >
+                    Copiar
+                  </button>
+                  <div class="copied-indicator hidden absolute top-2 right-2 text-green-500 text-xs sm:text-sm font-medium">
+                    Copiado!
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="px-6">
+      <div class="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6 py-16">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Tipos de Símbolos Legais:</h2>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Emojis:</span> Ícones pictóricos que representam emoções, objetos ou conceitos. Por exemplo: 😊, 🚀, 🎉.</li>
+            <li class="mb-2"><span class="font-bold">Caracteres Unicode:</span> Caracteres especiais do Padrão Unicode, como estrelas (★), corações (♥) ou setas (→).</li>
+            <li class="mb-2"><span class="font-bold">Arte ASCII:</span> Desenhos criativos feitos com caracteres padrão do teclado, muitas vezes formando imagens ou padrões.</li>
+            <li class="mb-2"><span class="font-bold">Símbolos de Moeda:</span> Representações de várias moedas, como $, €, ¥ ou £.</li>
+            <li class="mb-2"><span class="font-bold">Símbolos Matemáticos:</span> Caracteres utilizados em expressões matemáticas, como ∑ (somatório), ∞ (infinito) ou √ (raiz quadrada).</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Usando Símbolos Legais:</h2>
+        <p class="mb-4 text-gray-600">
+            Incorporar símbolos legais em seu conteúdo digital pode torná-lo mais atraente e transmitir mensagens de maneira mais eficaz. Aqui estão algumas dicas:
+        </p>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Copiar e Colar:</span> Muitos sites e aplicativos permitem que você copie símbolos diretamente e os cole em seu conteúdo.</li>
+            <li class="mb-2"><span class="font-bold">Atalhos de Teclado:</span> Alguns símbolos podem ser inseridos usando atalhos de teclado. Por exemplo, no Windows, você pode usar códigos <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Alt</code>; no Mac, você pode usar a tecla <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Option</code> com outras teclas.</li>
+            <li class="mb-2"><span class="font-bold">Ferramentas de Mapa de Caracteres:</span> Os sistemas operacionais geralmente incluem utilitários de mapa de caracteres que permitem selecionar e inserir caracteres especiais.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Considerações:</h2>
+        <ul class="list-disc pl-6">
+            <li class="mb-2"><span class="font-bold">Compatibilidade:</span> Certifique-se de que os símbolos que você usa sejam compatíveis em diferentes dispositivos e plataformas para manter a consistência.</li>
+            <li class="mb-2"><span class="font-bold">Legibilidade:</span> Use símbolos com moderação para evitar a desordem e garantir que sua mensagem seja clara.</li>
+            <li class="mb-2"><span class="font-bold">Diferenças Culturais:</span> Tenha em mente que alguns símbolos podem ter significados diferentes em diferentes culturas.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+
+
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to all copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        // Get the symbol to copy
+        const symbol = (e.target as HTMLElement).dataset.symbol;
+        
+        try {
+          // Try to copy the text
+          await navigator.clipboard.writeText(symbol);
+          
+          // Show the copied indicator
+          const tooltipContainer = (e.target as Element).closest('.relative');
+          const copiedIndicator = tooltipContainer.querySelector('.copied-indicator');
+          
+          // Show the copied indicator
+          copiedIndicator.classList.remove('hidden');
+          
+          // Hide it after animation
+          setTimeout(() => {
+            copiedIndicator.classList.add('hidden');
+          }, 2000);
+          
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (event) => {
+    const tooltips = document.querySelectorAll('.group');
+    tooltips.forEach(tooltip => {
+      if (!tooltip.contains(event.target as Node)) {
+        const copiedIndicator = tooltip.querySelector('.copied-indicator');
+        if (copiedIndicator) {
+          copiedIndicator.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>

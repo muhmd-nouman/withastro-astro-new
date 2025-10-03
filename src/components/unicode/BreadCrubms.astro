@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  items: {
+    label: string;
+    href: string;
+  }[];
+}
+
+const { items } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+// Ensure the home link does not include /en/
+const homeHref = lang === "en" ? "/" : `/${lang}/`;
+
+const t = useTranslations(lang);
+---
+
+<nav aria-label="Breadcrumb" class="mb-4">
+  <ol class="flex flex-wrap list-none p-0 m-0 text-gray-600">
+    <li class="flex items-center">
+      <a href={homeHref} class="text-gray-500 hover:underline">{t("breadcrumbs.home")}</a>
+    </li>
+    {
+      items.map((item, index) => (
+        <li class="flex items-center">
+          <span class="mx-2 text-gray-400">/</span>
+          {index === items.length - 1 ? (
+            <span aria-current="page" class="font-medium text-gray-800">{item.label}</span>
+          ) : (
+            <a href={item.href} class="text-gray-500 hover:underline">{item.label}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

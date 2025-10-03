@@ -1,0 +1,94 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="High Valyrian Translator" 
+  description="Translate text into High Valyrian, the ancient language from Game of Thrones and House of the Dragon"
+>
+  <TextTransformer 
+    client:load
+    title="High Valyrian Translator" 
+    description="Convert your text into the noble tongue of Old Valyria" 
+    transformType="valyrian"
+    placeholder="Enter your text to translate to High Valyrian..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About High Valyrian Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The High Valyrian Translator converts English text into High Valyrian, the ancient and noble language of the Valyrian Freehold from George R.R. Martin's "A Song of Ice and Fire" series and HBO's "Game of Thrones" and "House of the Dragon."</p>
+          <p>High Valyrian was the language of dragonlords and the educated elite of the ancient Valyrian Empire. It's considered a mark of nobility and education in Westeros and Essos.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Famous High Valyrian Phrases</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Iconic Commands:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>"Dracarys" - Dragonfire</li>
+                <li>"Valar morghulis" - All men must die</li>
+                <li>"Valar dohaeris" - All men must serve</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Common Words:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>"Zaldrīzes" - Dragon</li>
+                <li>"Dārys" - King</li>
+                <li>"Dāria" - Queen</li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Supported Translations</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Royal Titles:</strong> King, Queen, Prince, Princess, Lord, Lady</li>
+            <li><strong>Elements:</strong> Fire, Blood, Water, Wind, Sun, Moon, Star</li>
+            <li><strong>Emotions:</strong> Love, Hate, Life, Death, War, Peace</li>
+            <li><strong>Family:</strong> Mother, Father, Brother, Sister, Son, Daughter</li>
+            <li><strong>Objects:</strong> Sword, Shield, Crown, Throne, Gold, Silver, Iron</li>
+            <li><strong>Time:</strong> Night, Day, and various temporal concepts</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Game of Thrones and House of the Dragon fan content</li>
+            <li>Fantasy role-playing games and D&D campaigns</li>
+            <li>Medieval and fantasy-themed projects</li>
+            <li>Creative writing and world-building</li>
+            <li>Cosplay and convention activities</li>
+            <li>Social media posts for GoT fans</li>
+            <li>Fantasy literature and storytelling</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">About High Valyrian</h3>
+          <p>In the world of Westeros and Essos:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Language of the ancient Valyrian Freehold</li>
+            <li>Spoken by dragonlords and the nobility</li>
+            <li>Used for dragon commands and ancient magic</li>
+            <li>Considered a mark of education and high birth</li>
+            <li>Still taught to noble children in Westeros</li>
+            <li>Related to other Valyrian dialects in Essos</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Language Development</h3>
+          <p>High Valyrian was created by:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>George R.R. Martin:</strong> Original concepts and key phrases</li>
+            <li><strong>David J. Peterson:</strong> Full language development for HBO</li>
+            <li><strong>Language Creation Society:</strong> Linguistic consultation</li>
+            <li><strong>HBO Production:</strong> Practical implementation for the shows</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Cultural Significance</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Represents the height of ancient civilization</li>
+            <li>Associated with dragons and magical power</li>
+            <li>Symbol of lost glory and fallen empire</li>
+            <li>Used in formal ceremonies and important declarations</li>
+            <li>Connects characters to their noble heritage</li>
+          </ul>
+          <p class="mt-4">🐉 Speak the language of dragons and dragonlords! Dracarys! 🔥</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

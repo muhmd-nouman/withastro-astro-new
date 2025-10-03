@@ -1,0 +1,45 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Fancy Text Generator" 
+  description="Transform your text into multiple fancy styles with our free online fancy text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Fancy Text Generator" 
+    description="Convert your regular text into stylish, decorative fonts" 
+    transformType="fancy"
+    placeholder="Enter your text to transform it into fancy styles..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Fancy Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Fancy Text Generator transforms plain text into multiple stylish variations that can make your social media posts, usernames, messages, and other text stand out.</p>
+          <p>Unlike traditional fonts that require special software to display, our fancy text generator uses Unicode characters that are built into most modern devices and platforms. This means the fancy text you create will display correctly across most websites and applications.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your text in the input field above</li>
+            <li>See multiple fancy text variations generated automatically</li>
+            <li>Click the "Copy" button next to any style you like</li>
+            <li>Paste the fancy text wherever you want to use it</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Popular Uses</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Make your social media profiles stand out with unique text styles</li>
+            <li>Create eye-catching headlines for your blog or website</li>
+            <li>Stylize your username in games and online platforms</li>
+            <li>Add flair to your Instagram bio, Twitter name, or Facebook posts</li>
+            <li>Enhance your Discord, WhatsApp, or Telegram messages</li>
+          </ul>
+          <p class="mt-4">Note: While most platforms support these fancy Unicode characters, some older systems or specific applications might not display all styles correctly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

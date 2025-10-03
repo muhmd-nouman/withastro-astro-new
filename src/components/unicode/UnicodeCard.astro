@@ -1,0 +1,23 @@
+---
+interface Props {
+  symbol: string;
+  name: string;
+  code: string;
+  description: string;
+}
+const { symbol, name, code, description } = Astro.props;
+// Get the first part of the path as the language
+const lang = Astro.url.pathname.split("/")[1];
+// Define supported languages (excluding "en" from the path)
+const supportedLangs = ["es", "de", "id", "it", "pt", "ru", "fr", "nl"];
+// If the language in the URL is supported, keep it; otherwise, default to an empty string for English
+const pageLang = supportedLangs.includes(lang) ? `/${lang}` : "";
+// Generate the correct href while keeping the language dynamic
+const href = `${pageLang}/unicode/${code.toLowerCase()}/`;
+---
+<a href={href} class="block p-4 bg-white border border-gray-200 rounded-lg shadow-sm transition-transform hover:translate-y-[-2px] hover:shadow-md text-gray-900">
+  <div class="text-3xl mb-2">{symbol}</div>
+  <h3 class="text-lg font-semibold text-gray-700">{name}</h3>
+  <p class="text-sm font-mono text-gray-500 mt-1">{code}</p>
+  <p class="text-xs text-gray-600 mt-2 line-clamp-2">{description}</p>
+</a>

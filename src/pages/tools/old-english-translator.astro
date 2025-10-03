@@ -1,0 +1,77 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Old English Translator" 
+  description="Convert your text into Old English with medieval fonts and archaic words"
+>
+  <TextTransformer 
+    client:load
+    title="Old English Translator" 
+    description="Transform your text into medieval Old English style" 
+    transformType="oldenglish"
+    placeholder="Enter your text to translate it to Old English..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Old English Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Old English Translator converts modern text into medieval-style Old English, complete with archaic words and Gothic-style lettering. Perfect for creating authentic-looking historical documents or adding a touch of medieval flair to your text.</p>
+          <p>This translator combines beautiful Gothic Unicode characters with traditional Old English vocabulary to create text that looks and sounds like it came from medieval times.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Type your modern English text in the input field</li>
+            <li>See it transformed with Gothic letters and archaic words</li>
+            <li>Click "Copy" to copy your medieval text</li>
+            <li>Use it for historical projects, creative writing, or fun</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Old English Features</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Gothic/Fraktur Unicode characters for authentic medieval look</li>
+            <li>Archaic word replacements (you → thou, your → thy)</li>
+            <li>Medieval verb forms (are → art, have → hath)</li>
+            <li>Traditional expressions (yes → yea, very → verily)</li>
+            <li>Preserves original capitalization and punctuation</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Historical reenactments and medieval events</li>
+            <li>Fantasy writing and role-playing games</li>
+            <li>Educational projects about medieval history</li>
+            <li>Creating authentic-looking historical documents</li>
+            <li>Renaissance fairs and themed parties</li>
+            <li>Adding medieval atmosphere to creative projects</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Word Transformations</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Modern → Old English:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>you → thou</li>
+                <li>your → thy</li>
+                <li>are → art</li>
+                <li>have → hath</li>
+                <li>do → doth</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>More examples:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>yes → yea</li>
+                <li>before → ere</li>
+                <li>between → betwixt</li>
+                <li>very → verily</li>
+                <li>perhaps → mayhap</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-4">Note: The Gothic characters used are Unicode Fraktur letters that should display correctly on most modern devices and browsers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,118 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('valyrian.title')} 
+  description={t('valyrian.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('valyrian.title')} 
+    description={t('valyrian.tDesc')} 
+    transformType="valyrian"
+    placeholder={t('valyrian.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('valyrian.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('valyrian.p1')}</p>
+          <p>{t('valyrian.p2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.phrases.title')}</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>{t('valyrian.phrases.commandsTitle')}</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('valyrian.phrases.1')}</li>
+                <li>{t('valyrian.phrases.2')}</li>
+                <li>{t('valyrian.phrases.3')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>{t('valyrian.phrases.wordsTitle')}</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('valyrian.phrases.4')}</li>
+                <li>{t('valyrian.phrases.5')}</li>
+                <li>{t('valyrian.phrases.6')}</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.scope.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('valyrian.scope.1')}</li>
+            <li>{t('valyrian.scope.2')}</li>
+            <li>{t('valyrian.scope.3')}</li>
+            <li>{t('valyrian.scope.4')}</li>
+            <li>{t('valyrian.scope.5')}</li>
+            <li>{t('valyrian.scope.6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.uses.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('valyrian.uses.1')}</li>
+            <li>{t('valyrian.uses.2')}</li>
+            <li>{t('valyrian.uses.3')}</li>
+            <li>{t('valyrian.uses.4')}</li>
+            <li>{t('valyrian.uses.5')}</li>
+            <li>{t('valyrian.uses.6')}</li>
+            <li>{t('valyrian.uses.7')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.info.title')}</h3>
+          <p>{t('valyrian.info.p')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('valyrian.info.1')}</li>
+            <li>{t('valyrian.info.2')}</li>
+            <li>{t('valyrian.info.3')}</li>
+            <li>{t('valyrian.info.4')}</li>
+            <li>{t('valyrian.info.5')}</li>
+            <li>{t('valyrian.info.6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.creation.title')}</h3>
+          <p>{t('valyrian.creation.p')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('valyrian.creation.1')}</li>
+            <li>{t('valyrian.creation.2')}</li>
+            <li>{t('valyrian.creation.3')}</li>
+            <li>{t('valyrian.creation.4')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('valyrian.symbolism.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('valyrian.symbolism.1')}</li>
+            <li>{t('valyrian.symbolism.2')}</li>
+            <li>{t('valyrian.symbolism.3')}</li>
+            <li>{t('valyrian.symbolism.4')}</li>
+            <li>{t('valyrian.symbolism.5')}</li>
+          </ul>
+
+          <p class="mt-4">{t('valyrian.closing')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,164 @@
+---
+import "@/styles/global.css";
+import '@fontsource/kanit';
+import Navbar from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "@/utils/i18n";
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+const { title, description, canonicalUrl } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPath = Astro.url.pathname;
+const basePath = currentPath.replace(/^\/[a-z]{2}\//, "/");
+const siteUrl = import.meta.env.SITE || "https://invisiblesymbol.com/";
+const canonical = canonicalUrl || new URL(currentPath, siteUrl).href;
+const metaDescription = description;
+const metaImage = "/og_image.webp";
+
+
+
+const isToolPage = ["/tools/", "/generators/", "/fonts/"].some(path => currentPath.includes(path));
+
+---
+<!doctype html>
+<html lang={String(lang)} class="flex flex-col min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {
+      Object.keys(lang).map((langCode) => (
+        <link
+          rel="alternate"
+          hreflang={langCode}
+          href={
+            new URL(
+              `${langCode === "en" ? "" : `/${langCode}`}${basePath}`,
+              siteUrl,
+            ).href
+          }
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(basePath, siteUrl).href}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={new URL(metaImage, siteUrl).href} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:image" content={new URL(metaImage, siteUrl).href} />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5965676121872704"
+     crossorigin="anonymous"></script>
+  </head>
+  <body class="flex-grow">
+    <Navbar />
+    <main class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8  ">
+      <slot />
+    </main>
+    <Footer />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "InvisibleSymbol",
+      "url": "https://invisiblesymbol.com/",
+      "logo": "https://invisiblesymbol.com/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@invisiblesymbol.com",
+        "contactType": "Customer Support",
+        "areaServed": ["en", "de", "es", "fr", "pt", "nl", "id", "it", "ru"],
+        "availableLanguage": ["English", "German", "Spanish", "French", "Portuguese", "Dutch", "Indonesian", "Italian", "Russian"]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Invisible Symbol",
+      "url": "https://invisiblesymbol.com/",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://invisiblesymbol.com/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Invisible Symbol",
+          "item": "https://invisiblesymbol.com/"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between an invisible character and symbol?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normally, an invisible character and an invisible symbol are the same. They are used to represent empty or blank space."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Can I Send a Blank Message on WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To send a blank message on Whatsapp you can use an invisible character tool. We offer multiple methods to copy-paste invisible text. The simplest and quickest method is “Automatic Media”(Method 1). Using this method, you can copy and paste invisible characters on WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I Use Invisible Symbols in Designing or Coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, You can use invisible symbols in your designs or in your codes. Many designers and programmers use invisible characters to manage the spacing in their designs and code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Can I Hide My Gaming Name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can use our Invisible Character tool to hide your free fire name or pubg name. It can be a great play combat game invisbly."
+          }
+        }
+      ]
+    }
+    </script>
+    
+
+  </body>
+</html>

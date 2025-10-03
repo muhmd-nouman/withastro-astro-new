@@ -1,0 +1,85 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { useTranslations, getLangFromUrl } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout 
+  title={t("toolCategory.fontGenerators.instagramFonts.title")} 
+  description={t("toolCategory.fontGenerators.instagramFonts.description")}
+>
+  <TextTransformer 
+    client:load
+    title={t("toolCategory.fontGenerators.instagramFonts.title")} 
+    description={t("igFonts.intro.description")}
+    transformType="igfonts"
+    placeholder={t("igFonts.input.placeholder")}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("igFonts.about.title")}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t("igFonts.about.p1")}</p>
+          <p>{t("igFonts.about.p2")}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("igFonts.howTo.title")}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t("igFonts.howTo.step1")}</li>
+            <li>{t("igFonts.howTo.step2")}</li>
+            <li>{t("igFonts.howTo.step3")}</li>
+            <li>{t("igFonts.howTo.step4")}</li>
+          </ol>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("igFonts.styles.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("igFonts.styles.boldScript")}</li>
+            <li>{t("igFonts.styles.elegantScript")}</li>
+            <li>{t("igFonts.styles.circled")}</li>
+            <li>{t("igFonts.styles.doubleStruck")}</li>
+            <li>{t("igFonts.styles.smallCaps")}</li>
+            <li>{t("igFonts.styles.squared")}</li>
+            <li>{t("igFonts.styles.underlined")}</li>
+            <li>{t("igFonts.styles.tilde")}</li>
+            <li>{t("igFonts.styles.mixed")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("igFonts.useCases.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("igFonts.useCases.bio")}</li>
+            <li>{t("igFonts.useCases.posts")}</li>
+            <li>{t("igFonts.useCases.stories")}</li>
+            <li>{t("igFonts.useCases.highlights")}</li>
+            <li>{t("igFonts.useCases.captions")}</li>
+            <li>{t("igFonts.useCases.username")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("igFonts.tips.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("igFonts.tips.brand")}</li>
+            <li>{t("igFonts.tips.emojis")}</li>
+            <li>{t("igFonts.tips.readable")}</li>
+            <li>{t("igFonts.tips.variety")}</li>
+            <li>{t("igFonts.tips.mobile")}</li>
+            <li>{t("igFonts.tips.consistency")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("igFonts.reasons.title")}</h3>
+          <p>{t("igFonts.reasons.p1")}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("igFonts.reasons.popularity")}</li>
+            <li>{t("igFonts.reasons.compatibility")}</li>
+            <li>{t("igFonts.reasons.engagement")}</li>
+            <li>{t("igFonts.reasons.aesthetic")}</li>
+            <li>{t("igFonts.reasons.readability")}</li>
+          </ul>
+          <p class="mt-4">{t("igFonts.reasons.note")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

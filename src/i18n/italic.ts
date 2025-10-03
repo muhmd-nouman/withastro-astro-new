@@ -1,0 +1,211 @@
+export const useTranslations = {
+  "italic.title": {
+    "en": "Italic Text Generator",
+    "es": "Generador de Texto en Cursiva",
+    "fr": "Générateur de Texte Italique",
+    "de": "Kursivtext-Generator",
+    "pt": "Gerador de Texto em Itálico",
+    "ru": "Генератор Курсивного Текста",
+    "it": "Generatore di Testo in Corsivo",
+    "id": "Pembuat Teks Miring",
+    "nl": "Cursieve Tekstgenerator"
+  },
+  "italic.desc": {
+    "en": "Convert your text into italic Unicode characters with our free online italic text generator",
+    "es": "Convierte tu texto en caracteres Unicode en cursiva con nuestro generador gratuito en línea",
+    "fr": "Convertissez votre texte en caractères italiques Unicode avec notre générateur gratuit en ligne",
+    "de": "Wandle deinen Text in kursiv geschriebene Unicode-Zeichen um mit unserem kostenlosen Online-Generator",
+    "pt": "Converta seu texto em caracteres Unicode em itálico com nosso gerador gratuito",
+    "ru": "Преобразуйте ваш текст в курсивные символы Unicode с помощью нашего бесплатного онлайн-генератора",
+    "it": "Converti il tuo testo in caratteri Unicode corsivi con il nostro generatore online gratuito",
+    "id": "Ubah teks Anda menjadi karakter Unicode miring dengan generator teks miring gratis kami",
+    "nl": "Converteer je tekst naar cursieve Unicode-tekens met onze gratis online generator"
+  },
+  "italic.tDesc": {
+    "en": "Transform your text into slanted italic characters",
+    "es": "Transforma tu texto en caracteres inclinados en cursiva",
+    "fr": "Transformez votre texte en caractères italiques inclinés",
+    "de": "Verwandle deinen Text in geneigte, kursiv geschriebene Zeichen",
+    "pt": "Transforme seu texto em caracteres inclinados em itálico",
+    "ru": "Преобразуйте текст в наклонные курсивные символы",
+    "it": "Trasforma il tuo testo in caratteri corsivi inclinati",
+    "id": "Ubah teks Anda menjadi karakter miring",
+    "nl": "Zet je tekst om in schuine cursieve tekens"
+  },
+  "italic.placeholder": {
+    "en": "Enter your text to italicize it...",
+    "es": "Introduce tu texto para ponerlo en cursiva...",
+    "fr": "Entrez votre texte pour le mettre en italique...",
+    "de": "Gib deinen Text ein, um ihn kursiv zu machen...",
+    "pt": "Digite seu texto para colocá-lo em itálico...",
+    "ru": "Введите текст, чтобы сделать его курсивом...",
+    "it": "Inserisci il tuo testo per metterlo in corsivo...",
+    "id": "Masukkan teks Anda untuk memiringkannya...",
+    "nl": "Voer je tekst in om het cursief te maken..."
+  },
+  "italic.aboutTitle": {
+    "en": "About Italic Text Generator",
+    "es": "Acerca del Generador de Texto en Cursiva",
+    "fr": "À propos du Générateur de Texte Italique",
+    "de": "Über den Kursivtext-Generator",
+    "pt": "Sobre o Gerador de Texto em Itálico",
+    "ru": "О Генераторе Курсивного Текста",
+    "it": "Informazioni sul Generatore di Testo in Corsivo",
+    "id": "Tentang Pembuat Teks Miring",
+    "nl": "Over de Cursieve Tekstgenerator"
+  },
+  "italic.p1": {
+    "en": "Our Italic Text Generator converts regular text into italic Unicode characters that maintain their slanted style across most platforms and applications, even where regular formatting options aren't available.",
+    "es": "Nuestro Generador de Texto en Cursiva convierte texto normal en caracteres Unicode en cursiva que mantienen su estilo inclinado en la mayoría de las plataformas y aplicaciones, incluso donde no hay opciones de formato.",
+    "fr": "Notre Générateur de Texte Italique transforme le texte normal en caractères Unicode italiques qui conservent leur style incliné sur la plupart des plateformes et applications, même sans options de formatage.",
+    "de": "Unser Kursivtext-Generator wandelt normalen Text in kursiv geschriebene Unicode-Zeichen um, die ihren Stil auf den meisten Plattformen beibehalten, auch ohne Formatierungsoptionen.",
+    "pt": "Nosso Gerador de Texto em Itálico converte texto comum em caracteres Unicode em itálico que mantêm o estilo inclinado na maioria das plataformas e aplicativos, mesmo sem formatação padrão.",
+    "ru": "Наш генератор курсивного текста преобразует обычный текст в курсивные символы Unicode, которые сохраняют наклон на большинстве платформ и приложений, даже без поддержки форматирования.",
+    "it": "Il nostro Generatore di Testo in Corsivo converte testo normale in caratteri Unicode corsivi che mantengono lo stile inclinato su quasi tutte le piattaforme.",
+    "id": "Pembuat Teks Miring kami mengubah teks biasa menjadi karakter Unicode miring yang tetap miring di sebagian besar platform dan aplikasi.",
+    "nl": "Onze Cursieve Tekstgenerator zet gewone tekst om in cursieve Unicode-tekens die hun schuine stijl behouden op de meeste platforms."
+  },
+  "italic.p2": {
+    "en": "Unlike traditional HTML or CSS italics, these characters use special Unicode symbols that are inherently italic, allowing them to work in places like social media posts, profiles, messages, and other platforms.",
+    "es": "A diferencia del HTML o CSS tradicional, estos caracteres usan símbolos Unicode especiales que ya son cursivos, permitiéndoles funcionar en redes sociales, perfiles y otros lugares.",
+    "fr": "Contrairement aux italiques HTML ou CSS traditionnels, ces caractères utilisent des symboles Unicode spéciaux qui sont intrinsèquement italiques, ce qui les rend compatibles avec les réseaux sociaux, les messages et plus.",
+    "de": "Im Gegensatz zu herkömmlichem HTML- oder CSS-Kursiv verwenden diese Zeichen spezielle Unicode-Symbole, die von Natur aus kursiv sind.",
+    "pt": "Diferente dos itálicos em HTML ou CSS, esses caracteres usam símbolos Unicode especiais que já são inclinados, funcionando em redes sociais e mensagens.",
+    "ru": "В отличие от обычного HTML или CSS курсивов, эти символы используют специальные символы Unicode, которые по умолчанию курсивные.",
+    "it": "A differenza degli stili HTML o CSS, questi caratteri usano simboli Unicode intrinsecamente corsivi, compatibili con social, messaggi e altro.",
+    "id": "Berbeda dengan HTML atau CSS biasa, karakter ini menggunakan simbol Unicode khusus yang sudah miring secara default.",
+    "nl": "In tegenstelling tot HTML- of CSS-cursief gebruiken deze tekens speciale Unicode-symbolen die standaard cursief zijn."
+  },
+  "italic.how.title": {
+    "en": "How to Use",
+    "es": "Cómo Usar",
+    "fr": "Comment Utiliser",
+    "de": "Anleitung",
+    "pt": "Como Usar",
+    "ru": "Как использовать",
+    "it": "Come Usare",
+    "id": "Cara Menggunakan",
+    "nl": "Hoe te Gebruiken"
+  },
+  "italic.how.1": {
+    "en": "Enter your text in the input field above",
+    "es": "Escribe tu texto en el campo de entrada",
+    "fr": "Entrez votre texte dans le champ ci-dessus",
+    "de": "Gib deinen Text oben ein",
+    "pt": "Digite seu texto no campo acima",
+    "ru": "Введите текст в поле выше",
+    "it": "Inserisci il testo nel campo in alto",
+    "id": "Masukkan teks Anda di kolom input di atas",
+    "nl": "Voer je tekst in het invoerveld hierboven in"
+  },
+  "italic.how.2": {
+    "en": "See it automatically converted to italic text",
+    "es": "Verás cómo se convierte automáticamente en cursiva",
+    "fr": "Il sera automatiquement converti en italique",
+    "de": "Dein Text wird automatisch in Kursivschrift umgewandelt",
+    "pt": "Veja-o ser automaticamente convertido em itálico",
+    "ru": "Текст автоматически преобразуется в курсив",
+    "it": "Verrà automaticamente convertito in corsivo",
+    "id": "Lihat teks Anda otomatis menjadi miring",
+    "nl": "Je tekst wordt automatisch omgezet naar cursief"
+  },
+  "italic.how.3": {
+    "en": "Click the \"Copy\" button to copy the italicized text",
+    "es": "Haz clic en \"Copiar\" para copiar el texto en cursiva",
+    "fr": "Cliquez sur « Copier » pour copier le texte en italique",
+    "de": "Klicke auf „Kopieren“, um den kursiven Text zu kopieren",
+    "pt": "Clique em \"Copiar\" para copiar o texto em itálico",
+    "ru": "Нажмите «Копировать», чтобы скопировать курсивный текст",
+    "it": "Clicca su \"Copia\" per copiare il testo corsivo",
+    "id": "Klik \"Salin\" untuk menyalin teks miring",
+    "nl": "Klik op \"Kopiëren\" om de cursieve tekst te kopiëren"
+  },
+  "italic.how.4": {
+    "en": "Paste it wherever you want to use italic text",
+    "es": "Pégalo donde quieras usar texto en cursiva",
+    "fr": "Collez-le où vous voulez utiliser du texte en italique",
+    "de": "Füge ihn ein, wo immer du kursiven Text verwenden willst",
+    "pt": "Cole onde quiser usar texto em itálico",
+    "ru": "Вставьте туда, где хотите использовать курсив",
+    "it": "Incollalo dove vuoi usare il testo in corsivo",
+    "id": "Tempelkan di mana pun Anda ingin menggunakan teks miring",
+    "nl": "Plak het waar je cursieve tekst wilt gebruiken"
+  },
+  "italic.use.title": {
+    "en": "Where to Use Italic Text",
+    "es": "Dónde Usar Texto en Cursiva",
+    "fr": "Où Utiliser le Texte Italique",
+    "de": "Verwendung von Kursivtext",
+    "pt": "Onde Usar Texto em Itálico",
+    "ru": "Где использовать курсив",
+    "it": "Dove Usare il Testo in Corsivo",
+    "id": "Tempat Menggunakan Teks Miring",
+    "nl": "Waar cursieve tekst te gebruiken"
+  },
+  "italic.use.1": {
+    "en": "Add emphasis to important words in social media posts",
+    "es": "Resalta palabras importantes en publicaciones",
+    "fr": "Mettez en valeur des mots dans vos publications",
+    "de": "Betone wichtige Wörter in Social-Media-Posts",
+    "pt": "Destaque palavras importantes em postagens",
+    "ru": "Выделяйте важные слова в соцсетях",
+    "it": "Evidenzia parole importanti nei post",
+    "id": "Sorot kata penting di media sosial",
+    "nl": "Benadruk belangrijke woorden in berichten"
+  },
+  "italic.use.2": {
+    "en": "Create stylish bios on Instagram, Twitter, or Facebook",
+    "es": "Crea biografías con estilo en Instagram, Twitter o Facebook",
+    "fr": "Créez des bios stylées sur Instagram, Twitter ou Facebook",
+    "de": "Erstelle stilvolle Bios auf Instagram, Twitter oder Facebook",
+    "pt": "Crie bios estilosas no Instagram, Twitter ou Facebook",
+    "ru": "Создавайте стильные биографии в Instagram и Twitter",
+    "it": "Crea bio eleganti su Instagram, Twitter o Facebook",
+    "id": "Buat bio bergaya di Instagram, Twitter, atau Facebook",
+    "nl": "Maak stijlvolle bio's op Instagram, Twitter of Facebook"
+  },
+  "italic.use.3": {
+    "en": "Use in messaging apps like WhatsApp or Telegram",
+    "es": "Usa en apps de mensajería como WhatsApp o Telegram",
+    "fr": "Utilisez-le dans des apps comme WhatsApp ou Telegram",
+    "de": "Verwende es in Messengern wie WhatsApp oder Telegram",
+    "pt": "Use em aplicativos como WhatsApp ou Telegram",
+    "ru": "Используйте в мессенджерах, например WhatsApp",
+    "it": "Usalo nelle app di messaggistica come WhatsApp o Telegram",
+    "id": "Gunakan di aplikasi pesan seperti WhatsApp atau Telegram",
+    "nl": "Gebruik het in apps zoals WhatsApp of Telegram"
+  },
+  "italic.use.4": {
+    "en": "Enhance usernames or display names in games and forums",
+    "es": "Mejora nombres de usuario o alias en juegos y foros",
+    "fr": "Améliorez les noms dans les jeux ou forums",
+    "de": "Verbessere Benutzernamen in Spielen und Foren",
+    "pt": "Melhore nomes de usuário em jogos e fóruns",
+    "ru": "Улучшайте ники в играх и форумах",
+    "it": "Migliora i nomi utente nei giochi e nei forum",
+    "id": "Percantik nama pengguna di game dan forum",
+    "nl": "Verfraai gebruikersnamen in games en forums"
+  },
+  "italic.use.5": {
+    "en": "Add a touch of elegance to creative text and captions",
+    "es": "Agrega elegancia a texto y leyendas creativas",
+    "fr": "Ajoutez de l'élégance aux légendes créatives",
+    "de": "Füge eleganten Stil zu kreativen Texten hinzu",
+    "pt": "Adicione elegância a textos e legendas",
+    "ru": "Добавьте изящества к творческим подписям",
+    "it": "Aggiungi eleganza a testi e didascalie creative",
+    "id": "Tambahkan sentuhan elegan ke teks kreatif",
+    "nl": "Voeg elegantie toe aan creatieve tekst en bijschriften"
+  },
+  "italic.note": {
+    "en": "Note: These italic characters are mathematical italic Unicode symbols. While they work on most modern platforms, some older systems might not display them correctly.",
+    "es": "Nota: Estos caracteres en cursiva son símbolos Unicode matemáticos. Aunque funcionan en la mayoría de las plataformas modernas, algunos sistemas antiguos pueden no mostrarlos correctamente.",
+    "fr": "Remarque : Ces caractères sont des symboles Unicode mathématiques en italique. Ils fonctionnent sur la plupart des plateformes modernes, mais pas sur les plus anciennes.",
+    "de": "Hinweis: Diese kursiven Zeichen sind mathematische Unicode-Zeichen. Sie funktionieren auf den meisten modernen Plattformen, werden aber nicht überall korrekt angezeigt.",
+    "pt": "Nota: Esses caracteres em itálico são símbolos Unicode matemáticos. Eles funcionam na maioria das plataformas modernas, mas podem não ser exibidos corretamente em sistemas antigos.",
+    "ru": "Примечание: Эти символы — математический курсив в Unicode. Они работают на большинстве современных платформ, но могут отображаться некорректно на старых устройствах.",
+    "it": "Nota: Questi caratteri sono simboli Unicode matematici corsivi. Funzionano sulla maggior parte delle piattaforme moderne, ma potrebbero non essere visibili su sistemi più vecchi.",
+    "id": "Catatan: Karakter miring ini adalah simbol Unicode matematis. Meskipun berfungsi di sebagian besar platform modern, beberapa sistem lama mungkin tidak menampilkannya dengan benar.",
+    "nl": "Opmerking: Deze cursieve tekens zijn wiskundige Unicode-symbolen. Ze werken op de meeste moderne platforms, maar worden mogelijk niet goed weergegeven op oudere systemen."
+  }
+}

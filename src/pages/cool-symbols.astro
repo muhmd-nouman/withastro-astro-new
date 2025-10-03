@@ -1,0 +1,148 @@
+---
+import { coolSymbolCategories } from '@/utils/coolSymbols';
+import Layout from '@/layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "How can I use these symbols?",
+    answer: "Simply click on any symbol to copy it to your clipboard, then paste it wherever you want to use it."
+  },
+  {
+    question: "Will these symbols work everywhere?",
+    answer: "Most modern platforms support these Unicode symbols, but some older systems might display them differently."
+  }
+];
+const title = "Cool Symbols - Copy & Paste Symbols | Invisible Symbol";
+const description = "Browse unlimited range of cool symbols including stars, math, arrows, places, holy symbols & much more. Choose your favorite and copy with 1 click for free !";
+---
+<Layout title={title} description={description}>
+  <div class="container  mx-auto space-y-8">
+    <header class="max-w-4xl mx-auto px-6 py-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-2 sm:mb-4">Cool Symbols</h1>
+      <p class="text-md md:text-lg text-gray-600 text-center px-2 sm:px-0">Cool symbols are unique characters and icons that enhance visual interest and express emotions or ideas using unique symbols. They are widely used across social media, messaging apps, and websites, to make content more engaging.</p>
+    </header>
+
+    <section class="text-center px-6">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">How to copy cool symbols?</h2>
+      <p class="mb-4 text-sm sm:text-base text-gray-600">
+        Tap on any symbol to see its details, then tap 
+        <span class="text-blue-500 font-semibold">"Copy to clipboard"</span> to copy it.
+      </p>
+    </section>
+    
+    <section class="space-y-4 sm:space-y-6 px-6 ">
+      {coolSymbolCategories.map(category => (
+        <div class=" rounded-lg shadow-lg p-6 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">{category.name}</h3>
+          <div class="grid grid-cols-4 xs:grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-4">
+            {category.symbols.map(symbol => (
+              <div class="relative group items-center">
+                <button
+                  class="w-full aspect-square flex items-center justify-center text-5xl md:text-6xl lg:text-7xl bg-gray-100 rounded-lg hover:bg-gray-100 transition-all duration-200"
+                  aria-label={`Copiar ${symbol.name}`}
+                >
+                  {symbol.char}
+                </button>
+                
+                <!-- Tooltip amigable para móviles -->
+                <div class="border-black opacity-0 bg-white invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 absolute z-10 w-36 sm:w-48 p-3 sm:p-4  rounded-lg shadow-lg -translate-x-1/2 left-1/2 top-full mt-2">
+                  <div class="text-4xl sm:text-4xl text-center mb-2">{symbol.char}</div>
+                  <div class="text-xs sm:text-sm text-gray-600 text-center mb-2">{symbol.name}</div>
+                  <button
+                    type="button"
+                    class="copy-btn w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-gray-500 text-white text-sm rounded hover:bg-black transition-colors duration-200"
+                    data-symbol={symbol.char}
+                  >
+                    Copy
+                  </button>
+                  <div class="copied-indicator hidden absolute top-2 right-2 text-green-500 text-xs sm:text-sm font-medium">
+                    Copied !
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+    <section class="container mx-auto py-6 px-6">
+      <div class="max-w-7xl mx-auto bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-3 sm:mb-4">Types of Cool Symbols:</h2>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Emojis:</span> Pictorial icons representing emotions, objects, or concepts. For example: 😊, 🚀, 🎉.</li>
+            <li class="mb-2"><span class="font-bold">Unicode Characters:</span> Special characters from the Unicode Standard, such as stars (★), hearts (♥), or arrows (→).</li>
+            <li class="mb-2"><span class="font-bold">ASCII Art:</span> Creative designs made using standard keyboard characters, often forming images or patterns.</li>
+            <li class="mb-2"><span class="font-bold">Currency Symbols:</span> Representations of various currencies, like $, €, ¥, or £.</li>
+            <li class="mb-2"><span class="font-bold">Mathematical Symbols:</span> Characters used in mathematical expressions, such as ∑ (summation), ∞ (infinity), or √ (square root).</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Using Cool Symbols:</h2>
+        <p class="mb-4 text-gray-600">
+            Incorporating cool symbols into your digital content can make it more appealing and convey messages more effectively. Here are some tips:
+        </p>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Copy and Paste:</span> Many websites and apps allow you to copy symbols directly and paste them into your content.</li>
+            <li class="mb-2"><span class="font-bold">Keyboard Shortcuts:</span> Some symbols can be inserted using keyboard shortcuts. For example, on Windows, you can use <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Alt</code> codes; on Mac, you can use the <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Option</code> key with other keys.</li>
+            <li class="mb-2"><span class="font-bold">Character Map Tools:</span> Operating systems often include character map utilities that let you select and insert special characters.</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Considerations:</h2>
+        <ul class="list-disc pl-6">
+            <li class="mb-2"><span class="font-bold">Compatibility:</span> Ensure that the symbols you use are supported across different devices and platforms to maintain consistency.</li>
+            <li class="mb-2"><span class="font-bold">Readability:</span> Use symbols sparingly to avoid clutter and ensure your message remains clear.</li>
+            <li class="mb-2"><span class="font-bold">Cultural Differences:</span> Be aware that some symbols may have different meanings in different cultures.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+
+
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to all copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        // Get the symbol to copy
+        const symbol = (e.target as HTMLElement).dataset.symbol;
+        
+        try {
+          // Try to copy the text
+          await navigator.clipboard.writeText(symbol);
+          
+          // Show the copied indicator
+          const tooltipContainer = (e.target as Element).closest('.relative');
+          const copiedIndicator = tooltipContainer.querySelector('.copied-indicator');
+          
+          // Show the copied indicator
+          copiedIndicator.classList.remove('hidden');
+          
+          // Hide it after animation
+          setTimeout(() => {
+            copiedIndicator.classList.add('hidden');
+          }, 2000);
+          
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (event) => {
+    const tooltips = document.querySelectorAll('.group');
+    tooltips.forEach(tooltip => {
+      if (!tooltip.contains(event.target as Node)) {
+        const copiedIndicator = tooltip.querySelector('.copied-indicator');
+        if (copiedIndicator) {
+          copiedIndicator.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>
+

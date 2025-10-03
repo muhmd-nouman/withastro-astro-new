@@ -1,0 +1,57 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Curved Text Generator" 
+  description="Create curved, circular, and arc-shaped text effects with our free curved text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Curved Text Generator" 
+    description="Transform your text into curved, circular, and arc shapes" 
+    transformType="curved"
+    placeholder="Enter your text to create curved effects..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Curved Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Curved Text Generator creates various curved and circular text effects using Unicode combining characters and special symbols to simulate curved, arc-shaped, and circular text layouts.</p>
+          <p>While true curved text requires graphic design software, our generator uses creative Unicode techniques to achieve curved-like effects that work in plain text environments.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Curved Effects Available</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Circle Backslash:</strong> Characters with circular backslash overlay</li>
+            <li><strong>Enclosing Circle:</strong> Each character enclosed in a circle</li>
+            <li><strong>Enclosing Square:</strong> Characters in square frames</li>
+            <li><strong>Enclosing Diamond:</strong> Diamond-shaped character frames</li>
+            <li><strong>Parentheses Wrapped:</strong> Each character in parentheses</li>
+            <li><strong>Arc Symbols:</strong> Text wrapped with arc symbols</li>
+            <li><strong>Smile Curves:</strong> Curved smile symbols around text</li>
+            <li><strong>Frown Curves:</strong> Curved frown symbols around text</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Logo and branding text effects</li>
+            <li>Social media posts and bios</li>
+            <li>Creative typography projects</li>
+            <li>Decorative text elements</li>
+            <li>Artistic text layouts</li>
+            <li>Unique username styling</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Usage Tips</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Shorter text works better for curved effects</li>
+            <li>Test your curved text on different devices</li>
+            <li>Some effects may not display on older systems</li>
+            <li>Combine with other styling for enhanced effects</li>
+          </ul>
+          <p class="mt-4">Note: These effects use Unicode combining characters and may not display correctly on all platforms or devices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

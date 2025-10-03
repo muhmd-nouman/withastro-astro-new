@@ -1,0 +1,53 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Instagram Fonts Generator" 
+  description="Create stylish fonts perfect for Instagram bios, posts, and stories with our free generator"
+>
+  <TextTransformer 
+    client:load
+    title="Instagram Fonts Generator" 
+    description="Generate eye-catching text styles perfect for Instagram" 
+    transformType="instagram"
+    placeholder="Enter your text to see Instagram-ready font styles..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Instagram Fonts Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>Our Instagram Fonts Generator creates multiple stylish text variations that are perfect for making your Instagram profile, bio, posts, and stories stand out from the crowd.</p>
+          <p>These fonts use special Unicode characters that work across Instagram and most other social media platforms, ensuring your text maintains its style wherever it's displayed.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Type your text in the input field above</li>
+            <li>Browse through the different Instagram-ready font styles</li>
+            <li>Click "Copy" next to any style you like</li>
+            <li>Paste it directly into your Instagram bio, post, or story</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for Instagram</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Create eye-catching Instagram bios that attract followers</li>
+            <li>Make your Instagram posts stand out in the feed</li>
+            <li>Add style to your Instagram Stories text</li>
+            <li>Create unique captions that get more engagement</li>
+            <li>Design memorable Instagram usernames (where allowed)</li>
+            <li>Enhance your Instagram highlights covers with stylish text</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Tips for Instagram Success</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Use stylish fonts sparingly for maximum impact</li>
+            <li>Combine different styles to create visual hierarchy</li>
+            <li>Test your text on mobile devices to ensure readability</li>
+            <li>Keep your audience in mind when choosing font styles</li>
+          </ul>
+          <p class="mt-4">Note: While these fonts work great on Instagram and most platforms, always test your text to ensure it displays correctly for your audience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

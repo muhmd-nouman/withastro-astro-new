@@ -1,0 +1,24 @@
+---
+import CharacterDetail from '@/components/CharacterDetails.astro';
+import { getLangFromUrl } from '../../../utils/i18n';
+import { unicodeData } from "@/data/unicodeData";
+import Layout from "../../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return unicodeData.map((char) => ({
+    params: { code: char.code.toLowerCase() },
+    props: { char },
+  }));
+}
+const { char } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const displayName = char.name?.[lang] ?? char.name?.["en"] ?? "Unknown";
+const displayDesc = char.description?.[lang] ?? char.description?.["en"] ?? "";
+export const prerender = true;
+---
+<Layout 
+  title= `Unicode ${char.code} - Copiar e Colar (${char.symbol}) Símbolo`
+  description=`${char.symbol} Unicode ${char.decimal}, conhecido como ${displayName}. Copie e cole ${char.code} facilmente para as suas necessidades. Perfeito para truques de formatação e mais!`
+>
+  <CharacterDetail char={char} lang={lang} />
+</Layout>

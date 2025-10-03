@@ -1,0 +1,33 @@
+{
+  "site": {
+    "seo.title": "Unicode Tekens en Symbolen - Onzichtbare Symbolen",
+    "description": "Verken de fascinerende wereld van Unicode-tekens"
+  },
+  "nav": {
+    "home": "Startpagina",
+    "unicode": "Unicode Lijst",
+    "categories": "Categorieën"
+  },
+  "unicode": {
+    "details": "Details",
+    "category": "Categorie",
+    "decimal": "Decimaal",
+    "htmlEntity": "HTML Entiteit",
+    "content": {
+      "title": "Over dit Symbool",
+      "usage": "Algemeen Gebruik",
+      "history": "Geschiedenis",
+      "technical": "Technische Details"
+    },
+    "related": {
+      "title": "Gerelateerde Unicode Tekens",
+      "category": "Meer uit deze categorie",
+      "similar": "Vergelijkebare Symbolen"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Startpagina",
+    "unicode": "Unicode",
+    "categories": "Categorieën"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "site": {
+    "seo.title": "Caratteri Unicode e simboli - Simboli invisibili",
+    "description": "Esplora il mondo affascinante dei caratteri Unicode"
+  },
+  "nav": {
+    "home": "Home",
+    "unicode": "Lista Unicode",
+    "categories": "Categorie"
+  },
+  "unicode": {
+    "details": "Dettagli",
+    "category": "Categoria",
+    "decimal": "Decimale",
+    "htmlEntity": "Entità HTML",
+    "content": {
+      "title": "Informazioni su questo carattere",
+      "usage": "Uso comune",
+      "history": "Storia",
+      "technical": "Dettagli tecnici"
+    },
+    "related": {
+      "title": "Caratteri Unicode correlati",
+      "category": "Altri da questa categoria",
+      "similar": "Caratteri simili"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "unicode": "Unicode",
+    "categories": "Categorie"
+  }
+}

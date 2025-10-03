@@ -1,0 +1,149 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { coolSymbolCategories } from '@/utils/coolSymbols';
+
+const faqs = [
+  {
+    question: "How can I use these symbols?",
+    answer: "Simply click on any symbol to copy it to your clipboard, then paste it wherever you want to use it."
+  },
+  {
+    question: "Will these symbols work everywhere?",
+    answer: "Most modern platforms support these Unicode symbols, but some older systems might display them differently."
+  }
+];
+const lang = "id";
+const title = "Simbol Keren - Salin dan Tempel Simbol | InvisibleSymbol";
+const description = "Salin dan tempel simbol keren, simbol tak terlihat, dan karakter khusus dari koleksi kami.";
+---
+<Layout title={title} description={description}>
+  <div class="mx-auto space-y-8 sm:space-y-8">
+    <header class="max-w-4xl mx-auto px-6 py-6">
+      <h1 class="text-4xl sm:text-3xl font-bold text-center text-gray-900 mb-2 sm:mb-4">Simbol Keren</h1>
+      <p class="text-md md:text-lg text-gray-600 text-center px-2 sm:px-0">Simbol keren adalah karakter dan ikon unik yang meningkatkan minat visual dan mengekspresikan emosi atau ide menggunakan simbol unik. Mereka banyak digunakan di media sosial, aplikasi pesan, dan situs web untuk membuat konten lebih menarik.</p>
+    </header>
+
+    <section class="text-center px-6">
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">Bagaimana Cara Kerjanya</h2>
+      <p class="mb-4 sm:mb-6 text-md md:text-lg text-gray-600 text-center">
+          Ketuk simbol apa saja untuk melihat detailnya, lalu ketuk 
+          <span class="text-blue-500 font-semibold">"Salin ke Papan Klip"</span> untuk menyalinnya.
+      </p>
+    </section>
+    
+    <section class="space-y-4 sm:space-y-6 px-6">
+      {coolSymbolCategories.map(category => (
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">{category.name}</h3>
+          <div class="grid grid-cols-4 xs:grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-4">
+            {category.symbols.map(symbol => (
+              <div class="relative group items-center">
+                <button
+                  class="w-full aspect-square flex items-center justify-center text-5xl md:text-6xl lg:text-7xl bg-gray-100 rounded-lg hover:bg-gray-100 transition-all duration-200"
+                  aria-label={`Salin ${symbol.name}`}
+                >
+                  {symbol.char}
+                </button>
+                
+                <!-- Tooltip ramah seluler -->
+                <div class="border-black opacity-0 bg-black invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 absolute z-10 w-36 sm:w-48 p-3 sm:p-4 bg-white rounded-lg shadow-lg -translate-x-1/2 left-1/2 top-full mt-2">
+                  <div class="text-4xl sm:text-4xl text-center mb-2">{symbol.char}</div>
+                  <div class="text-xs sm:text-sm text-gray-600 text-center mb-2">{symbol.name}</div>
+                  <button
+                    type="button"
+                    class="copy-btn w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-blue-500 text-white text-sm rounded hover:bg-black transition-colors duration-200"
+                    data-symbol={symbol.char}
+                  >
+                    Salin
+                  </button>
+                  <div class="copied-indicator hidden absolute top-2 right-2 text-green-500 text-xs sm:text-sm font-medium">
+                    Disalin!
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="px-6">
+      <div class="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6 py-16">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Jenis Simbol Keren:</h2>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Emoji:</span> Ikon piktografis yang mewakili emosi, objek, atau konsep. Misalnya: 😊, 🚀, 🎉.</li>
+            <li class="mb-2"><span class="font-bold">Karakter Unicode:</span> Karakter khusus dari standar Unicode, seperti bintang (★), hati (♥) atau panah (→).</li>
+            <li class="mb-2"><span class="font-bold">Seni ASCII:</span> Desain kreatif yang dibuat dengan karakter standar keyboard, sering kali membentuk gambar atau pola.</li>
+            <li class="mb-2"><span class="font-bold">Simbol Mata Uang:</span> Representasi berbagai mata uang, seperti $, €, ¥ atau £.</li>
+            <li class="mb-2"><span class="font-bold">Simbol Matematika:</span> Karakter yang digunakan dalam ekspresi matematika, seperti ∑ (jumlah), ∞ (tak terhingga) atau √ (akar kuadrat).</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Menggunakan Simbol Keren:</h2>
+        <p class="mb-4 text-gray-600">
+            Menggabungkan simbol keren dalam konten digital Anda dapat membuatnya lebih menarik dan menyampaikan pesan dengan lebih efektif. Berikut beberapa tips:
+        </p>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Salin dan Tempel:</span> Banyak situs web dan aplikasi memungkinkan Anda untuk langsung menyalin simbol dan menempelkannya ke dalam konten Anda.</li>
+            <li class="mb-2"><span class="font-bold">Pintasan Keyboard:</span> Beberapa simbol dapat dimasukkan menggunakan pintasan keyboard. Misalnya, di Windows, Anda dapat menggunakan kode <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Alt</code>; di Mac, Anda dapat menggunakan tombol <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Option</code> dengan tombol lainnya.</li>
+            <li class="mb-2"><span class="font-bold">Alat Peta Karakter:</span> Sistem operasi sering kali menyertakan utilitas peta karakter yang memungkinkan Anda memilih dan memasukkan karakter khusus.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Pertimbangan:</h2>
+        <ul class="list-disc pl-6">
+            <li class="mb-2"><span class="font-bold">Kompatibilitas:</span> Pastikan simbol yang Anda gunakan kompatibel di berbagai perangkat dan platform untuk menjaga konsistensi.</li>
+            <li class="mb-2"><span class="font-bold">Keterbacaan:</span> Gunakan simbol dengan bijak untuk menghindari kekacauan dan memastikan pesan Anda jelas.</li>
+            <li class="mb-2"><span class="font-bold">Perbedaan Budaya:</span> Ingatlah bahwa beberapa simbol mungkin memiliki arti yang berbeda di budaya yang berbeda.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+
+
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to all copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        // Get the symbol to copy
+        const symbol = (e.target as HTMLElement).dataset.symbol;
+        
+        try {
+          // Try to copy the text
+          await navigator.clipboard.writeText(symbol);
+          
+          // Show the copied indicator
+          const tooltipContainer = (e.target as Element).closest('.relative');
+          const copiedIndicator = tooltipContainer.querySelector('.copied-indicator');
+          
+          // Show the copied indicator
+          copiedIndicator.classList.remove('hidden');
+          
+          // Hide it after animation
+          setTimeout(() => {
+            copiedIndicator.classList.add('hidden');
+          }, 2000);
+          
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (event) => {
+    const tooltips = document.querySelectorAll('.group');
+    tooltips.forEach(tooltip => {
+      if (!tooltip.contains(event.target as Node)) {
+        const copiedIndicator = tooltip.querySelector('.copied-indicator');
+        if (copiedIndicator) {
+          copiedIndicator.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>

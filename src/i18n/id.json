@@ -1,0 +1,33 @@
+{
+  "site": {
+    "seo.title": "Karakter Unicode dan Simbol - Simbol Tak Terlihat",
+    "description": "Jelajahi dunia menarik karakter Unicode"
+  },
+  "nav": {
+    "home": "Beranda",
+    "unicode": "Daftar Unicode",
+    "categories": "Kategori"
+  },
+  "unicode": {
+    "details": "Detail",
+    "category": "Kategori",
+    "decimal": "Desimal",
+    "htmlEntity": "Entitas HTML",
+    "content": {
+      "title": "Tentang Karakter Ini",
+      "usage": "Penggunaan Umum",
+      "history": "Sejarah",
+      "technical": "Detail Teknis"
+    },
+    "related": {
+      "title": "Karakter Unicode Terkait",
+      "category": "Lainnya dari kategori ini",
+      "similar": "Karakter Serupa"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Beranda",
+    "unicode": "Unicode",
+    "categories": "Kategori"
+  }
+}

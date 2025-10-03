@@ -1,0 +1,46 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Reverse Text Generator" 
+  description="Easily reverse the order of characters in your text with our free online text reverser"
+>
+  <TextTransformer 
+    client:load
+    title="Reverse Text Generator" 
+    description="Flip your text backwards, character by character" 
+    transformType="reverse"
+    placeholder="Enter text here to reverse it..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Reverse Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Reverse Text Generator is a simple yet fun tool that flips your text backwards, reversing the order of all characters. It's perfect for creating mirror text or just for fun creative expressions.</p>
+          <p>This tool works by taking each character in your text and rearranging them in reverse order, from last to first.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Type or paste your text into the input box</li>
+            <li>Watch as it's instantly flipped backwards in the output</li>
+            <li>Click "Copy" to copy the reversed text</li>
+            <li>Use your reversed text wherever you like</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Fun Uses for Reversed Text</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Create puzzles or brain teasers</li>
+            <li>Make mirror writing for creative posts</li>
+            <li>Use in games or riddles</li>
+            <li>Create coded messages</li>
+            <li>Add a unique touch to social media content</li>
+            <li>Create artistic visual effects with text</li>
+          </ul>
+          <p class="mt-4">Did you know? Leonardo da Vinci famously used mirror writing in his notebooks, writing from right to left in reverse. You can recreate this style with our reverse text generator!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

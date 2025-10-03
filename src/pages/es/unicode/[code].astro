@@ -1,0 +1,25 @@
+---
+import CharacterDetail from '@/components/CharacterDetails.astro';
+import { getLangFromUrl } from '../../../utils/i18n';
+import { unicodeData } from '../../../data/unicodeData';
+import Layout from '@/layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return unicodeData.map((char) => ({
+    params: { code: char.code.toLowerCase() },
+    props: { char },
+  }));
+}
+const { char } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const displayName = char.name?.[lang] ?? char.name?.["en"] ?? "Unknown";
+const displayDesc = char.description?.[lang] ?? char.description?.["en"] ?? "";
+
+export const prerender = true;
+---
+<Layout 
+  title= `Unicode ${char.code} - ${displayName} Símbolo | (${char.symbol}) Signo`
+  description=`${char.symbol} Unicode ${char.decimal}, conocido como ${displayName}. Copia y pega fácilmente ${char.code} para tus necesidades. Perfecto para trucos de formato, ¡y más!`
+>
+  <CharacterDetail char={char} lang={lang} />
+</Layout>

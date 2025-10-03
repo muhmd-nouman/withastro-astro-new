@@ -1,0 +1,74 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('stylish.title')} 
+  description={t('stylish.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('stylish.transformerTitle')} 
+    description={t('stylish.transformerDesc')} 
+    transformType="stylish"
+    placeholder={t('stylish.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('stylish.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('stylish.aboutDesc1')}</p>
+          <p>{t('stylish.aboutDesc2')}</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('stylish.howToTitle')}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t('stylish.howToStep1')}</li>
+            <li>{t('stylish.howToStep2')}</li>
+            <li>{t('stylish.howToStep3')}</li>
+            <li>{t('stylish.howToStep4')}</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('stylish.stylesTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('stylish.style.script')}</li>
+            <li>{t('stylish.style.boldScript')}</li>
+            <li>{t('stylish.style.doubleStruck')}</li>
+            <li>{t('stylish.style.boldFraktur')}</li>
+            <li>{t('stylish.style.sansSerif')}</li>
+            <li>{t('stylish.style.smallCaps')}</li>
+            <li>{t('stylish.style.squared')}</li>
+            <li>{t('stylish.style.circled')}</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('stylish.perfectForTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('stylish.perfectFor1')}</li>
+            <li>{t('stylish.perfectFor2')}</li>
+            <li>{t('stylish.perfectFor3')}</li>
+            <li>{t('stylish.perfectFor4')}</li>
+            <li>{t('stylish.perfectFor5')}</li>
+            <li>{t('stylish.perfectFor6')}</li>
+          </ul>
+          <p class="mt-4">{t('stylish.note')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

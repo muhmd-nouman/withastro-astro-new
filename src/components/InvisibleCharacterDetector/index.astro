@@ -1,0 +1,62 @@
+---
+import DetectorResults from "./DetectorResults.astro";
+---
+
+<div class="space-y-6">
+  <div class="bg-gray-100 p-6 rounded-lg border">
+    <label for="detectInput" class="block text-sm font-medium mb-2">
+      Paste text to analyze invisible characters
+    </label>
+    <textarea
+      id="detectInput"
+      class="w-full h-32 p-3 border rounded-lg dark:bg-gray-700 dark:border-gray-600"
+      placeholder="Paste text here to detect invisible characters..."
+    ></textarea>
+  </div>
+
+  <DetectorResults className="mt-4" />
+</div>
+
+<script>
+  import { analyzeText } from "./utils/analyzer";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("detectInput") as HTMLTextAreaElement;
+    const resultsContainer = document.getElementById("detectorResults");
+    const template = document.getElementById(
+      "resultTemplate",
+    ) as HTMLTemplateElement;
+
+    function updateResults(text: string) {
+      if (!resultsContainer) return;
+
+      resultsContainer.innerHTML = "";
+      const results = analyzeText(text);
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML =
+          '<p class="text-gray-500">No invisible characters detected</p>';
+        return;
+      }
+
+      results.forEach((result) => {
+        const clone = template.content.cloneNode(true) as DocumentFragment;
+        const div = clone.firstElementChild as HTMLElement;
+
+        div.querySelector(".unicode")!.textContent = result.unicode;
+        div.querySelector(".count")!.textContent = result.count.toString();
+        div.querySelector(".name")!.textContent = result.name;
+        div.querySelector(".html")!.textContent = result.html;
+        div.querySelector(".positions")!.textContent =
+          result.position.join(", ");
+
+        resultsContainer.appendChild(div);
+      });
+    }
+
+    input?.addEventListener("input", (e) => {
+      const text = (e.target as HTMLTextAreaElement).value;
+      updateResults(text);
+    });
+  });
+</script>

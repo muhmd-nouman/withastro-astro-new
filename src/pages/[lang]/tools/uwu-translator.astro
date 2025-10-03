@@ -1,0 +1,76 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('uwu.title')} 
+  description={t('uwu.description')}
+>
+  <TextTransformer 
+    client:load
+    title={t('uwu.title')} 
+    description={t('uwu.shortdesc')} 
+    transformType="uwu"
+    placeholder={t('uwu.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('uwu.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('uwu.about1')}</p>
+          <p>{t('uwu.about2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('uwu.howToTitle')}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t('uwu.step1')}</li>
+            <li>{t('uwu.step2')}</li>
+            <li>{t('uwu.step3')}</li>
+            <li>{t('uwu.step4')}</li>
+          </ol>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('uwu.transformsTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('uwu.transform1')}</li>
+            <li>{t('uwu.transform2')}</li>
+            <li>{t('uwu.transform3')}</li>
+            <li>{t('uwu.transform4')}</li>
+            <li>{t('uwu.transform5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('uwu.perfectForTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('uwu.perfect1')}</li>
+            <li>{t('uwu.perfect2')}</li>
+            <li>{t('uwu.perfect3')}</li>
+            <li>{t('uwu.perfect4')}</li>
+            <li>{t('uwu.perfect5')}</li>
+            <li>{t('uwu.perfect6')}</li>
+          </ul>
+
+          <p class="mt-4">{t('uwu.footer')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

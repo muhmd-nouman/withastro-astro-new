@@ -1,0 +1,102 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CldImage } from 'astro-cloudinary';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+  {
+    icon: "unlimited-icon_ub0t5k",
+    // icon: "unlimited-icon_ub0t5k",
+    bgColor: "bg-blue-100",
+    alt: "unlimited invisible symbols",
+    title: "Generate Unlimited Invisible Symbols",
+    titleKey: t("wut1.title"),
+    descriptionKey: t("wut1.description")
+  },
+  {
+    icon: "no-signup-or-installation-icon_d1buo3",
+    bgColor: "bg-green-100",
+    alt: "no signup or installation required",
+    title: "No Signup or Installation Required",
+    titleKey: t("wut2.title"),
+    descriptionKey: t("wut2.description")
+  },
+  {
+    icon: "easy-to-use-icon_hrqqwt",
+    bgColor: "bg-purple-100",
+    alt: "Easy to Use",
+    title: "Easy to Use",
+    titleKey: t("wut3.title"),
+    descriptionKey: t("wut3.description")
+  },
+  {
+    icon: "t_upscaled/totally-free_j26iie",
+    bgColor: "bg-indigo-100",
+    alt: "Totally Free",
+    title: "Totally Free",
+    titleKey: t("wut4.title"),
+    descriptionKey: t("wut4.description")
+  },
+  {
+    icon: "fast-responsive_oci9x3",
+    bgColor: "bg-yellow-100",
+    alt: "Quick results and responsive design",
+    title: "Quick results and responsive design",
+    titleKey: t("wut5.title"),
+    descriptionKey: t("wut5.description")
+  },
+  {
+    icon: "accurate-icon_afacwf",
+    bgColor: "bg-gray-200",
+    alt: "accurate results",
+    title: "Accuracy",
+    titleKey: t("wut6.title"),
+    descriptionKey: t("wut6.description")
+  },
+  {
+    icon: "easeofaccess_iwbxnt",
+    bgColor: "bg-red-100",
+    alt: "ease of access",
+    title: "Ease of access",
+    titleKey: t("wut7.title"),
+    descriptionKey: t("wut7.description")
+  }
+];
+---
+
+<section id="why_use_our_invisiblesymbol_tool" class="space-y-12 md:px-2">
+  <div class="max-w-4xl mx-auto px-6 pt-12">
+    <h2 class="text-2xl md:text-3xl text-center font-bold text-black pt-8 mb-6">
+      {t("why_use_tool.heading")}
+    </h2>
+    <p class="text-md md:text-lg text-gray-700 text-center">
+      {t("why_use_tool.description")}
+    </p>
+  </div>
+
+  <div class="space-y-6 p-6">
+    {features.map(({ icon, bgColor, alt, title, titleKey, descriptionKey }) => (
+      <div class="flex flex-col md:flex-row items-start justify-between space-y-6 md:space-y-0">
+        <div class={`flex-shrink-0 w-16 h-16 ${bgColor} rounded-full p-4 flex items-center justify-center`}>
+          <CldImage
+            src={icon}
+            alt={alt}
+            title={title}
+            height={48}
+            width={48}
+          />
+        </div>
+        <div class="md:ml-8 flex-1">
+          <h3 class="text-2xl font-semibold text-black mb-2">
+            {titleKey}
+          </h3>
+          <p class="text-md md:text-lg text-gray-600">
+            {descriptionKey}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Italic Text Generator" 
+  description="Convert your text into italic Unicode characters with our free online italic text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Italic Text Generator" 
+    description="Transform your text into slanted italic characters" 
+    transformType="italic"
+    placeholder="Enter your text to italicize it..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Italic Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>Our Italic Text Generator converts regular text into italic Unicode characters that maintain their slanted style across most platforms and applications, even where regular formatting options aren't available.</p>
+          <p>Unlike traditional HTML or CSS italics, these characters use special Unicode symbols that are inherently italic, allowing them to work in places like social media posts, profiles, messages, and other platforms.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your text in the input field above</li>
+            <li>See it automatically converted to italic text</li>
+            <li>Click the "Copy" button to copy the italicized text</li>
+            <li>Paste it wherever you want to use italic text</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Where to Use Italic Text</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Add emphasis to important words in social media posts</li>
+            <li>Create stylish bios on Instagram, Twitter, or Facebook</li>
+            <li>Use in messaging apps like WhatsApp or Telegram</li>
+            <li>Enhance usernames or display names in games and forums</li>
+            <li>Add a touch of elegance to creative text and captions</li>
+          </ul>
+          <p class="mt-4">Note: These italic characters are mathematical italic Unicode symbols. While they work on most modern platforms, some older systems might not display them correctly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

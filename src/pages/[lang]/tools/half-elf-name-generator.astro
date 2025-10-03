@@ -1,0 +1,76 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('halfelf.title')} 
+  description={t('halfelf.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('halfelf.title')} 
+    description={t('halfelf.tDesc')} 
+    transformType="halfelf"
+    placeholder={t('halfelf.placeholder')}
+    isGenerator={true}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('halfelf.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('halfelf.p1')}</p>
+          <p>{t('halfelf.p2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('halfelf.structure.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('halfelf.structure.1')}</li>
+            <li>{t('halfelf.structure.2')}</li>
+            <li>{t('halfelf.structure.3')}</li>
+            <li>{t('halfelf.structure.4')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('halfelf.uses.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('halfelf.uses.1')}</li>
+            <li>{t('halfelf.uses.2')}</li>
+            <li>{t('halfelf.uses.3')}</li>
+            <li>{t('halfelf.uses.4')}</li>
+            <li>{t('halfelf.uses.5')}</li>
+            <li>{t('halfelf.uses.6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('halfelf.traits.title')}</h3>
+          <p>{t('halfelf.traits.p')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('halfelf.traits.1')}</li>
+            <li>{t('halfelf.traits.2')}</li>
+            <li>{t('halfelf.traits.3')}</li>
+            <li>{t('halfelf.traits.4')}</li>
+            <li>{t('halfelf.traits.5')}</li>
+          </ul>
+          <p class="mt-4">{t('halfelf.note')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

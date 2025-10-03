@@ -1,0 +1,48 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Glitch Text Generator" 
+  description="Create corrupted, zalgo, and glitched text effects with our free glitch text generator"
+>
+  <TextTransformer 
+    client:load
+    title="Glitch Text Generator" 
+    description="Transform your text into corrupted, glitched, and zalgo effects" 
+    transformType="glitch"
+    placeholder="Enter your text to create glitch effects..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Glitch Text Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Glitch Text Generator creates various corrupted and distorted text effects that simulate digital glitches, zalgo text, and other creepy or broken text styles.</p>
+          <p>These effects use Unicode combining characters and special symbols to create the appearance of corrupted or glitched text that works across most platforms.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Glitch Effects Available</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Random Character Glitch:</strong> Replaces some characters with random symbols</li>
+            <li><strong>Zalgo Text:</strong> Adds combining characters above, below, and through text</li>
+            <li><strong>Strikethrough Glitch:</strong> Adds strikethrough effects to all characters</li>
+            <li><strong>Double Vision:</strong> Duplicates each character for a double vision effect</li>
+            <li><strong>Inverted Characters:</strong> Flips characters upside down</li>
+            <li><strong>Bracketed Glitch:</strong> Randomly adds brackets around characters</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Horror and creepy content</li>
+            <li>Gaming usernames and profiles</li>
+            <li>Digital art and design projects</li>
+            <li>Social media posts with edgy aesthetics</li>
+            <li>Creative writing and storytelling</li>
+            <li>Cyberpunk and tech-themed content</li>
+          </ul>
+          <p class="mt-4">Note: Some glitch effects may not display correctly on all devices or platforms, especially older systems with limited Unicode support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

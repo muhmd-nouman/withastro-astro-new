@@ -1,0 +1,77 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Cat Name Generator - Unique & Funny Cat Names" 
+  description="Generate cute, funny, and unique cat names for your feline friends with our cat name generator"
+>
+  <TextTransformer 
+    client:load
+    title="Cat Name Generator" 
+    description="Discover the perfect name for your feline companion" 
+    transformType="catnames"
+    placeholder=""
+    isGenerator={true}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Cat Name Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Cat Name Generator creates a variety of cute, funny, and unique names perfect for your feline friends. Whether you have a playful kitten or a dignified senior cat, our generator provides names that capture their personality.</p>
+          <p>From simple and sweet names to fancy aristocratic titles, our generator covers all types of cat personalities and breeds.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Types of Cat Names Generated</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Simple & Sweet:</strong> Classic names like Mittens, Socks, Cookie, Muffin</li>
+            <li><strong>Food-Inspired:</strong> Delicious names like Pepper, Ginger, Cocoa, Vanilla</li>
+            <li><strong>Compound Names:</strong> Creative combinations like Whiskerpaws, Tailfur</li>
+            <li><strong>Aristocratic Names:</strong> Fancy titles like Sir Whiskers, Duchess, Count Meowcula</li>
+            <li><strong>Color-Based:</strong> Names inspired by coat colors and patterns</li>
+            <li><strong>Personality-Based:</strong> Names that reflect cat behaviors and traits</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>New kitten or cat adoption</li>
+            <li>Renaming rescue cats</li>
+            <li>Creative writing and storytelling</li>
+            <li>Cat-themed games and projects</li>
+            <li>Social media cat accounts</li>
+            <li>Cat breeding and showing</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Naming Tips for Cats</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Choose names with 1-2 syllables for easier recognition</li>
+            <li>Avoid names that sound like commands (No, Stay, etc.)</li>
+            <li>Consider your cat's personality and appearance</li>
+            <li>Test the name - say it out loud several times</li>
+            <li>Make sure all family members like the name</li>
+            <li>Consider nicknames and variations</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Popular Cat Name Categories</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Classic Names:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Whiskers, Mittens, Patches</li>
+                <li>Tiger, Shadow, Smokey</li>
+                <li>Princess, Duchess, King</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Modern Trends:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Luna, Milo, Oliver</li>
+                <li>Bella, Charlie, Max</li>
+                <li>Chloe, Leo, Lily</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-4">Click the generate button to discover the perfect name for your feline friend! 🐱</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

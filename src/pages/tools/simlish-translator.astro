@@ -1,0 +1,86 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Simlish Translator" 
+  description="Translate your text into Simlish, the fictional language from The Sims video game series"
+>
+  <TextTransformer 
+    client:load
+    title="Simlish Translator" 
+    description="Convert your text into the whimsical Simlish language" 
+    transformType="simlish"
+    placeholder="Enter your text to translate to Simlish..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Simlish Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Simlish Translator converts your text into Simlish, the fictional language spoken by Sims in the popular video game series "The Sims." Simlish is known for its playful, nonsensical sounds that somehow convey emotion and meaning.</p>
+          <p>Created by Maxis for The Sims, Simlish was designed to be universally understood through tone and context rather than actual words, making it perfect for a global audience.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How Simlish Works</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Gibberish Base:</strong> Uses made-up words that sound language-like</li>
+            <li><strong>Emotional Tone:</strong> Conveys meaning through inflection and context</li>
+            <li><strong>Length Matching:</strong> Longer words get longer Simlish equivalents</li>
+            <li><strong>Punctuation Preserved:</strong> Keeps original sentence structure</li>
+            <li><strong>Capitalization Maintained:</strong> Preserves proper nouns and emphasis</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Famous Simlish Phrases</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>Common Greetings:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>"Sul sul" - Hello</li>
+                <li>"Dag dag" - Goodbye</li>
+                <li>"Plerg majah" - Excuse me</li>
+                <li>"Yibs" - Yes</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Expressions:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>"Nooboo" - Baby</li>
+                <li>"Firby nurbs" - Can't understand</li>
+                <li>"Blarfy" - Hungry</li>
+                <li>"Meshaloob" - Crazy/wild</li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>The Sims fan content and communities</li>
+            <li>Gaming memes and social media posts</li>
+            <li>Creative writing and fictional languages</li>
+            <li>Cosplay and gaming conventions</li>
+            <li>Fun messages and secret codes</li>
+            <li>Language learning exercises (constructed languages)</li>
+            <li>Gaming livestreams and content creation</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">The Sims Legacy</h3>
+          <p>Simlish has become iconic in gaming culture:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Featured in all main Sims games since 2000</li>
+            <li>Real musicians have recorded songs in Simlish</li>
+            <li>Recognized by gamers worldwide</li>
+            <li>Inspired other fictional game languages</li>
+            <li>Part of gaming pop culture and memes</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Fun Facts</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Artists like Katy Perry and The Black Eyed Peas recorded Simlish versions of their songs</li>
+            <li>Simlish was designed to avoid translation issues in different countries</li>
+            <li>The language has evolved and expanded with each Sims game</li>
+            <li>Voice actors improvise much of the Simlish dialogue</li>
+            <li>Some Simlish words are based on real languages like Tagalog and Ukrainian</li>
+          </ul>
+          <p class="mt-4">Sul sul! Ready to speak like a Sim? Plerg majah! 🎮</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

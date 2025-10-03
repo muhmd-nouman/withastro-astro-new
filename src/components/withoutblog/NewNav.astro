@@ -1,0 +1,230 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CldImage } from "astro-cloudinary";
+
+const lang = getLangFromUrl(Astro.url) || "en";
+const t = useTranslations(lang);
+
+const languages = [
+  { code: "en", name: "English" },
+  { code: "es", name: "Español" },
+  { code: "de", name: "Deutsch" },
+  { code: "fr", name: "Français" },
+  { code: "id", name: "Indonesian" },
+  { code: "it", name: "Italiano" },
+  { code: "nl", name: "Nederlands" },
+  { code: "pt", name: "Português" },
+  { code: "ru", name: "Русский" },
+];
+const supportedLangs = languages.map((l) => l.code).filter((code) => code !== "en");
+const currentPath = Astro.url.pathname;
+const pathSegments = currentPath.split("/").filter(Boolean);
+const currentLang = supportedLangs.includes(pathSegments[0]) ? pathSegments[0] : "en";
+if (currentLang !== "en") {
+  pathSegments.shift();
+}
+const getLocalizedPath = (path) => {
+  // Remove leading/trailing slashes from path
+  const cleanPath = path.replace(/^\/+|\/+$/g, "");
+  if (lang === "en") {
+    return cleanPath ? `/${cleanPath}/` : "/";
+  } else {
+    return cleanPath ? `/${lang}/${cleanPath}/` : `/${lang}/`;
+  }
+};
+---
+
+<header id="main-header" class="sticky top-0 w-full mx-auto bg-white backdrop-blur-md backdrop-filter shadow-sm z-50 transition-all duration-300 text-black">
+  <div class="container max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href={getLocalizedPath("")} class="flex items-center text-sm font-extrabold text-black gap-2 group">
+      <CldImage 
+        src="My Brand/logo_dwd2ix" 
+        height={36} 
+        width={36} 
+        title="Invisible Symbol" 
+        alt="invisiblesymbol-logo" 
+        class="bg-gray-200 rounded-full border-1 border-black/90 group-hover:scale-105 transition-transform duration-200"
+      />
+      <span class="leading-tight text-base font-bold tracking-tight group-hover:text-primary transition-colors duration-200">
+        Invisible<br/>Symbol
+      </span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="hidden lg:flex justify-center flex-1 mx-4">
+      <ul class="flex gap-6 text-base font-medium">
+        <li><a href={getLocalizedPath("")} class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:w-full hover:text-primary transition-colors">{t("navlinks.home")}</a></li>
+        <li><a href={getLocalizedPath("unicode")} class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:w-full hover:text-primary transition-colors">{t("navlinks.unicode")}</a></li>
+        <li><a href={getLocalizedPath("tools")} class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:w-full hover:text-primary transition-colors">{t("navlinks.tools")}</a></li>
+        <li><a href="blog" class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:w-full hover:text-primary transition-colors">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language Switcher -->
+    <div class="hidden lg:block relative">
+      <button id="language-menu-button" class="flex items-center px-3 py-2 text-sm border rounded-md bg-black text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow transition-all duration-200">
+        {languages.find((l) => l.code === lang)?.name}
+        <svg class="ml-2 h-4 w-4 opacity-50 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <!-- <div id="language-menu" class="hidden absolute right-0 mt-2 w-44 bg-gray-900/95 text-white rounded-xl shadow-xl ring-1 ring-black/10 overflow-hidden animate-fade-in z-20">
+        {languages.map((langObj) => {
+          const cleanPath = pathSegments.join("/");
+          let newPath = langObj.code === "en"
+            ? (cleanPath ? `/${cleanPath}/` : "/")
+            : (cleanPath ? `/${langObj.code}/${cleanPath}/` : `/${langObj.code}/`);
+          return (
+            <a href={newPath} class="block px-5 py-2 text-sm hover:bg-primary hover:text-white transition-colors">{langObj.name}</a>
+          );
+        })}
+      </div> -->
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="lg:hidden flex flex-col items-center p-2 rounded-md">
+      <div id="hamburger-line-1" class="w-7 h-0.5 bg-black mb-1.5 transition-all duration-300"></div>
+      <div id="hamburger-line-2" class="w-7 h-0.5 bg-black mb-1.5 transition-all duration-300"></div>
+      <div id="hamburger-line-3" class="w-7 h-0.5 bg-black transition-all duration-300"></div>
+    </button>
+  </div>
+
+  <!-- Mobile Menu & Overlay -->
+  <div id="mobile-overlay" class="fixed inset-0 bg-black/50 hidden transition-opacity duration-300 z-40">
+    <div id="nav-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen shadow-2xl animate-slide-down">
+      <!-- Mobile Menu Header -->
+      <div class="bg-white px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+        <!-- Logo in mobile menu -->
+        <a href={getLocalizedPath("")} class="flex items-center text-sm font-extrabold text-black gap-2 group">
+          <CldImage 
+            src="My Brand/logo_dwd2ix" 
+            height={36} 
+            width={36} 
+            title="Invisible Symbol" 
+            alt="invisiblesymbol-logo" 
+            class="bg-gray-200 rounded-full border-1 border-black/90 group-hover:scale-105 transition-transform duration-200"
+          />
+          <span class="leading-tight text-base font-bold tracking-tight group-hover:text-primary transition-colors duration-200">
+            Invisible<br/>Symbol
+          </span>
+        </a>
+        
+        <!-- Close Button -->
+        <button id="mobile-close-btn" class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu Content -->
+      <div class="bg-white p-6 flex flex-col gap-6 flex-1">
+        <a href={getLocalizedPath("")} class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.home")}</a>
+        <a href={getLocalizedPath("unicode")} class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.unicode")}</a>
+        <a href={getLocalizedPath("tools")} class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.tools")}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.18s ease; }
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down { animation: slide-down 0.22s cubic-bezier(.4,0,.2,1); }
+
+/* Hamburger animation styles */
+.mobile-menu-open #hamburger-line-1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.mobile-menu-open #hamburger-line-2 {
+  opacity: 0;
+}
+.mobile-menu-open #hamburger-line-3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileCloseBtn = document.getElementById("mobile-close-btn");
+  const navMenu = document.getElementById("nav-menu");
+  const mobileOverlay = document.getElementById("mobile-overlay");
+  const body = document.body;
+
+  function openMobileMenu() {
+    navMenu?.classList.remove("hidden");
+    mobileOverlay?.classList.remove("hidden");
+    body.classList.add("mobile-menu-open", "overflow-hidden");
+  }
+
+  function closeMobileMenu() {
+    navMenu?.classList.add("hidden");
+    mobileOverlay?.classList.add("hidden");
+    body.classList.remove("mobile-menu-open", "overflow-hidden");
+  }
+
+  function toggleMobileMenu() {
+    if (navMenu?.classList.contains("hidden")) {
+      openMobileMenu();
+    } else {
+      closeMobileMenu();
+    }
+  }
+
+  mobileMenuBtn?.addEventListener("click", toggleMobileMenu);
+  mobileCloseBtn?.addEventListener("click", closeMobileMenu);
+  mobileOverlay?.addEventListener("click", closeMobileMenu);
+
+  // Close mobile menu when clicking any link inside it
+  navMenu?.addEventListener("click", function(e) {
+    const target = e.target as HTMLElement;
+    if (target.tagName === "A") {
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile menu on escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && !navMenu?.classList.contains("hidden")) {
+      closeMobileMenu();
+    }
+  });
+
+  // Desktop Language Dropdown Toggle
+  const langButton = document.getElementById("language-menu-button");
+  const langMenu = document.getElementById("language-menu");
+  
+  langButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langMenu?.classList.toggle("hidden");
+  });
+  
+  document.addEventListener("click", (event) => {
+    if (
+      langButton &&
+      langMenu &&
+      event.target instanceof Node &&
+      !langButton.contains(event.target) &&
+      !langMenu.contains(event.target)
+    ) {
+      langMenu.classList.add("hidden");
+    }
+  });
+  
+  // Hide language menu on scroll
+  window.addEventListener("scroll", () => {
+    langMenu?.classList.add("hidden");
+  });
+});
+</script>

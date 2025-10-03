@@ -1,0 +1,149 @@
+---
+import { coolSymbolCategories } from '@/utils/coolSymbols';
+import Layout from '@/layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "How can I use these symbols?",
+    answer: "Simply click on any symbol to copy it to your clipboard, then paste it wherever you want to use it."
+  },
+  {
+    question: "Will these symbols work everywhere?",
+    answer: "Most modern platforms support these Unicode symbols, but some older systems might display them differently."
+  }
+];
+const lang = "nl";
+const title = "Coole Symbolen - Kopieer en Plak Symbolen | InvisibleSymbol";
+const description = "Kopieer en plak coole symbolen, onzichtbare symbolen en speciale tekens uit onze collectie.";
+---
+<Layout title={title} description={description}>
+  <div class="mx-auto space-y-8 sm:space-y-8">
+    <header class="max-w-4xl mx-auto px-6 py-6">
+      <h1 class="text-4xl sm:text-3xl font-bold text-center text-gray-900 mb-2 sm:mb-4">Coole Symbolen</h1>
+      <p class="text-md md:text-lg text-gray-600 text-center px-2 sm:px-0">Coole symbolen zijn unieke tekens en iconen die visuele interesse vergroten en emoties of ideeën uitdrukken met behulp van unieke symbolen. Ze worden veel gebruikt op sociale media, berichtenapps en websites om de inhoud aantrekkelijker te maken.</p>
+    </header>
+
+    <section class="text-center px-6">
+      <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-900">Hoe het Werkt</h2>
+      <p class="mb-4 sm:mb-6 text-md md:text-lg text-gray-600 text-center">
+          Tik op een symbool om de details te zien en tik vervolgens op 
+          <span class="text-blue-500 font-semibold">"Kopieer naar klembord"</span> om het te kopiëren.
+      </p>
+    </section>
+    
+    <section class="space-y-4 sm:space-y-6 px-6">
+      {coolSymbolCategories.map(category => (
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">{category.name}</h3>
+          <div class="grid grid-cols-4 xs:grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-4">
+            {category.symbols.map(symbol => (
+              <div class="relative group items-center">
+                <button
+                  class="w-full aspect-square flex items-center justify-center text-5xl md:text-6xl lg:text-7xl bg-gray-100 rounded-lg hover:bg-gray-100 transition-all duration-200"
+                  aria-label={`Kopieer ${symbol.name}`}
+                >
+                  {symbol.char}
+                </button>
+                
+                <!-- Mobielvriendelijke tooltip -->
+                <div class="border-black opacity-0 bg-black invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 absolute z-10 w-36 sm:w-48 p-3 sm:p-4 bg-white rounded-lg shadow-lg -translate-x-1/2 left-1/2 top-full mt-2">
+                  <div class="text-4xl sm:text-4xl text-center mb-2">{symbol.char}</div>
+                  <div class="text-xs sm:text-sm text-gray-600 text-center mb-2">{symbol.name}</div>
+                  <button
+                    type="button"
+                    class="copy-btn w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-blue-500 text-white text-sm rounded hover:bg-black transition-colors duration-200"
+                    data-symbol={symbol.char}
+                  >
+                    Kopiëren
+                  </button>
+                  <div class="copied-indicator hidden absolute top-2 right-2 text-green-500 text-xs sm:text-sm font-medium">
+                    Gekopieerd!
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="px-6">
+      <div class="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6 py-16">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Soorten Coole Symbolen:</h2>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Emoji's:</span> Pictogrammen die emoties, objecten of concepten vertegenwoordigen. Bijvoorbeeld: 😊, 🚀, 🎉.</li>
+            <li class="mb-2"><span class="font-bold">Unicode-tekens:</span> Speciale tekens uit de Unicode-standaard, zoals sterren (★), harten (♥) of pijlen (→).</li>
+            <li class="mb-2"><span class="font-bold">ASCII-kunst:</span> Creatieve ontwerpen gemaakt met standaard toetsenbordtekens, vaak in de vorm van afbeeldingen of patronen.</li>
+            <li class="mb-2"><span class="font-bold">Valutasymbolen:</span> Representaties van verschillende valuta's, zoals $, €, ¥ of £.</li>
+            <li class="mb-2"><span class="font-bold">Wiskundige symbolen:</span> Tekens die worden gebruikt in wiskundige uitdrukkingen, zoals ∑ (som), ∞ (oneindig) of √ (vierkantswortel).</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Coole Symbolen Gebruiken:</h2>
+        <p class="mb-4 text-gray-600">
+            Het opnemen van coole symbolen in je digitale inhoud kan het aantrekkelijker maken en berichten effectiever overbrengen. Hier zijn enkele tips:
+        </p>
+        <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2"><span class="font-bold">Kopiëren en Plakken:</span> Veel websites en apps laten je symbolen direct kopiëren en in je inhoud plakken.</li>
+            <li class="mb-2"><span class="font-bold">Toetsenbord Sneltoetsen:</span> Sommige symbolen kunnen worden ingevoegd met behulp van sneltoetsen. Bijvoorbeeld, op Windows kun je <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Alt</code>-codes gebruiken; op Mac kun je de <code class="bg-gray-200 px-1 py-0.5 rounded text-sm">Option</code>-toets met andere toetsen gebruiken.</li>
+            <li class="mb-2"><span class="font-bold">Tekenkaart Hulpmiddelen:</span> Besturingssystemen bevatten vaak tekenkaart-hulpmiddelen waarmee je speciale tekens kunt selecteren en invoegen.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mb-4">Overwegingen:</h2>
+        <ul class="list-disc pl-6">
+            <li class="mb-2"><span class="font-bold">Compatibiliteit:</span> Zorg ervoor dat de symbolen die je gebruikt compatibel zijn op verschillende apparaten en platforms om consistentie te behouden.</li>
+            <li class="mb-2"><span class="font-bold">Leesbaarheid:</span> Gebruik symbolen met mate om rommel te voorkomen en ervoor te zorgen dat je boodschap duidelijk is.</li>
+            <li class="mb-2"><span class="font-bold">Culturele Verschillen:</span> Houd er rekening mee dat sommige symbolen verschillende betekenissen kunnen hebben in verschillende culturen.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+
+
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add click event listeners to all copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        // Get the symbol to copy
+        const symbol = (e.target as HTMLElement).dataset.symbol;
+        
+        try {
+          // Try to copy the text
+          await navigator.clipboard.writeText(symbol);
+          
+          // Show the copied indicator
+          const tooltipContainer = (e.target as Element).closest('.relative');
+          const copiedIndicator = tooltipContainer.querySelector('.copied-indicator');
+          
+          // Show the copied indicator
+          copiedIndicator.classList.remove('hidden');
+          
+          // Hide it after animation
+          setTimeout(() => {
+            copiedIndicator.classList.add('hidden');
+          }, 2000);
+          
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (event) => {
+    const tooltips = document.querySelectorAll('.group');
+    tooltips.forEach(tooltip => {
+      if (!tooltip.contains(event.target as Node)) {
+        const copiedIndicator = tooltip.querySelector('.copied-indicator');
+        if (copiedIndicator) {
+          copiedIndicator.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script>

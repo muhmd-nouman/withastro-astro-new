@@ -1,0 +1,186 @@
+---
+import MainLayout from "@/layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const symbols = [
+  "🕶️",
+  "🥷",
+  "👤",
+  "🕴️",
+  "🌑",
+  "🕯️",
+  "🗝️",
+  "🔒",
+  "🕸️",
+  "🦇",
+  "🐱‍👤",
+  "🌚",
+  "🌘",
+  "🌑",
+  "⚫",
+  "◾",
+  "⬛",
+  "🔲",
+];
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('stealth.title')} 
+  description={t('stealth.desc')}
+  >
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <h1 class="text-4xl font-bold text-center text-gray-900 my-8">
+      {t('stealth.title')}
+    </h1>
+    <section
+      id="stealth-symbol-tool"
+      class="max-w-3xl mx-auto bg-gray-50 border p-8 rounded-lg shadow-md"
+    >
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2" for="text-input">
+          {t('stealth.inputLabel')}
+        </label>
+        <input
+          type="text"
+          id="text-input"
+          placeholder={t('stealth.placeholder')}
+          class="w-full p-3 border border-gray-300 rounded-lg"
+        />
+      </div>
+
+      <div class="grid grid-cols-4 gap-4 mb-6 sm:grid-cols-6 lg:grid-cols-6">
+        {
+          symbols.map((symbol) => (
+            <button
+              class="symbol-btn p-3 bg-gray-100 border border-gray-300 rounded-lg text-lg hover:text-xl font-semibold text-center hover:bg-white hover:border-gray-300 relative"
+              aria-label={t('stealth.aria', { symbol })}
+            >
+              {symbol}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="mt-4">
+        <label class="block text-gray-700 font-medium mb-2" for="output">
+          {t('stealth.outputLabel')}
+        </label>
+        <div
+          id="output"
+          class="p-4 bg-gray-100 border border-gray-300 rounded-lg text-gray-800 whitespace-pre-wrap break-words min-h-[50px]"
+        ></div>
+        <button
+          id="copy-btn"
+          class="mt-4 px-6 py-2 bg-black text-white font-medium rounded-lg hover:bg-gray-800"
+        >
+          {t('stealth.copy')}
+        </button>
+      </div>
+    </section>
+  </div>
+</MainLayout>
+
+<style is:inline>
+  .symbol-btn {
+    transition: all 0.3s ease;
+  }
+
+  .symbol-zoom {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 10em;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+  }
+</style>
+
+<script type="module">
+  const textInput = document.getElementById("text-input");
+  const output = document.getElementById("output");
+  const copyBtn = document.getElementById("copy-btn");
+  const symbolBtns = document.querySelectorAll(".symbol-btn");
+
+  let currentText = "";
+
+  // Update text when the input changes
+  textInput?.addEventListener("input", (e) => {
+    currentText = e.target.value;
+    updateOutput();
+  });
+
+  // Add symbols to text on button click
+  symbolBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const symbol = btn.textContent || "";
+      currentText = `${symbol} ${currentText} ${symbol}`;
+      updateOutput();
+    });
+
+    // Add hover functionality for zoom effect
+    btn.addEventListener("mouseenter", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      const symbol = target.textContent || "";
+      const zoomElement = document.createElement("div");
+      zoomElement.className = "symbol-zoom";
+      zoomElement.textContent = symbol;
+      document.body.appendChild(zoomElement);
+
+      const updateZoomPosition = (mouseEvent) => {
+        const rect = target.getBoundingClientRect();
+        zoomElement.style.left = `${mouseEvent.clientX - 50}px`;
+        zoomElement.style.top = `${mouseEvent.clientY - 100}px`;
+      };
+
+      updateZoomPosition(e);
+      target.addEventListener("mousemove", updateZoomPosition);
+
+      target.addEventListener(
+        "mouseleave",
+        () => {
+          document.body.removeChild(zoomElement);
+          target.removeEventListener("mousemove", updateZoomPosition);
+        },
+        { once: true },
+      );
+    });
+  });
+
+  // Copy the current text to clipboard
+  copyBtn?.addEventListener("click", () => {
+    navigator.clipboard.writeText(currentText);
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => {
+      copyBtn.textContent = "Copy to Clipboard";
+    }, 2000);
+  });
+
+  // Update the output display
+  function updateOutput() {
+    if (output) {
+      output.textContent = currentText;
+    }
+  }
+</script>

@@ -1,0 +1,42 @@
+---
+import UnicodeGrid from "./unicode/UnicodeGrid.astro";
+import Breadcrumbs from "./unicode/BreadCrubms.astro";
+import { unicodeData } from "../data/unicodeData";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+
+export function getStaticPaths() {
+    return Object.keys(languages).map((lang) => ({
+        params: { lang: lang === "en" ? undefined : lang },
+    }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const items = unicodeData.map((char) => ({
+    symbol: char.symbol,
+    name: char.name[lang],
+    code: char.code,
+    description: char.description[lang],
+}));
+
+const breadcrumbItems = [{ label: t("breadcrumbs.unicode"), href: "#" }];
+---
+
+<div class="container max-w-7xl mx-auto">
+    <div class=" justify-between items-center mb-6">
+        <div class="flex flex-wrap justify-start ">
+            <Breadcrumbs items={breadcrumbItems} />
+        </div>
+        <div class="mb-8 justify-center">
+            <h1 class="text-4xl font-bold text-primary mb-4 text-center">
+                {t("unicode_symbols_characters")}
+            </h1>
+            <p class="text-xl text-gray-700 text-center">
+                {t("check_latest_collections")}
+            </p>
+        </div>
+        <UnicodeGrid items={items} />
+    </div>    
+</div>

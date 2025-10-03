@@ -1,0 +1,72 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Demonic Symbols Generator" 
+  description="Convert text into demonic symbols and occult characters for horror, gothic, and dark-themed projects"
+>
+  <TextTransformer 
+    client:load
+    title="Demonic Symbols Generator" 
+    description="Transform your text into dark, mystical demonic symbols" 
+    transformType="demonic"
+    placeholder="Enter your text to convert to demonic symbols..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Demonic Symbols Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Demonic Symbols Generator converts regular text into dark, mystical symbols and occult characters. Perfect for horror projects, gothic aesthetics, and dark fantasy content that needs an otherworldly, supernatural feel.</p>
+          <p>This tool uses various Unicode symbols including pentagrams, mystical characters, and occult symbols to create text that appears ancient, forbidden, or supernatural.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Symbol Types Used</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Pentagrams:</strong> Five-pointed stars with mystical significance</li>
+            <li><strong>Inverted Symbols:</strong> Upside-down mystical characters</li>
+            <li><strong>Occult Characters:</strong> Various esoteric and mystical symbols</li>
+            <li><strong>Ancient Symbols:</strong> Characters that appear ancient or forbidden</li>
+            <li><strong>Mystical Frames:</strong> Symbols that wrap and contain the text</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Horror movie titles and credits</li>
+            <li>Gothic and dark fantasy novels</li>
+            <li>Halloween decorations and events</li>
+            <li>Dark metal band names and logos</li>
+            <li>Occult and supernatural themed games</li>
+            <li>Horror video game interfaces</li>
+            <li>Dark art and design projects</li>
+            <li>Supernatural storytelling</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Cultural Context</h3>
+          <p>These symbols draw from various cultural and historical sources:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Medieval Manuscripts:</strong> Ancient grimoires and spell books</li>
+            <li><strong>Alchemical Symbols:</strong> Historical scientific and mystical notation</li>
+            <li><strong>Religious Iconography:</strong> Various spiritual and mystical traditions</li>
+            <li><strong>Gothic Architecture:</strong> Medieval cathedral and monastery symbols</li>
+            <li><strong>Folklore Traditions:</strong> Symbols from various cultural mythologies</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Important Note</h3>
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+            <p class="text-yellow-800 dark:text-yellow-200">
+              <strong>Disclaimer:</strong> This tool is designed for creative, artistic, and entertainment purposes only. The symbols generated are Unicode characters used for aesthetic effect in horror, fantasy, and gothic-themed projects. They are not intended for any actual occult, religious, or supernatural practices.
+            </p>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Usage Tips</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Use sparingly for maximum dramatic effect</li>
+            <li>Great for titles, headers, and accent text</li>
+            <li>Pair with appropriate dark themes and imagery</li>
+            <li>Consider your audience and context</li>
+            <li>Test symbol display across different platforms</li>
+          </ul>
+          <p class="mt-4">Note: These symbols use Unicode characters that should display on most modern devices, though some older systems may not support all symbols.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

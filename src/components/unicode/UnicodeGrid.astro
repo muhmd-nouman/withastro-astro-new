@@ -1,0 +1,20 @@
+---
+import UnicodeCard from "./UnicodeCard.astro";
+
+interface UnicodeItem {
+  symbol: string;
+  name: string;
+  code: string;
+  description: string;
+}
+
+interface Props {
+  items: UnicodeItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mx-auto">
+  {items.map((item) => <UnicodeCard {...item} />)}
+</div>

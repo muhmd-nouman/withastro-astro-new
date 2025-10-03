@@ -1,0 +1,92 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t("gen.fantasy.title")} 
+  description={t("gen.fantasy.desc")}
+>
+  <TextTransformer 
+    client:load
+    title={t("gen.fantasy.title")} 
+    description={t("gen.fantasy.tDesc")} 
+    transformType="fantasy"
+    placeholder={t("gen.fantasy.placeholder")}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("gen.fantasy.aboutTitle")}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t("gen.fantasy.p1")}</p>
+          <p>{t("gen.fantasy.p2")}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.fantasy.styles.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.fantasy.styles.1")}</li>
+            <li>{t("gen.fantasy.styles.2")}</li>
+            <li>{t("gen.fantasy.styles.3")}</li>
+            <li>{t("gen.fantasy.styles.4")}</li>
+            <li>{t("gen.fantasy.styles.5")}</li>
+            <li>{t("gen.fantasy.styles.6")}</li>
+            <li>{t("gen.fantasy.styles.7")}</li>
+            <li>{t("gen.fantasy.styles.8")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.fantasy.uses.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.fantasy.uses.1")}</li>
+            <li>{t("gen.fantasy.uses.2")}</li>
+            <li>{t("gen.fantasy.uses.3")}</li>
+            <li>{t("gen.fantasy.uses.4")}</li>
+            <li>{t("gen.fantasy.uses.5")}</li>
+            <li>{t("gen.fantasy.uses.6")}</li>
+            <li>{t("gen.fantasy.uses.7")}</li>
+            <li>{t("gen.fantasy.uses.8")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.fantasy.history.title")}</h3>
+          <p>{t("gen.fantasy.history.p")}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.fantasy.history.1")}</li>
+            <li>{t("gen.fantasy.history.2")}</li>
+            <li>{t("gen.fantasy.history.3")}</li>
+            <li>{t("gen.fantasy.history.4")}</li>
+            <li>{t("gen.fantasy.history.5")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.fantasy.tips.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.fantasy.tips.1")}</li>
+            <li>{t("gen.fantasy.tips.2")}</li>
+            <li>{t("gen.fantasy.tips.3")}</li>
+            <li>{t("gen.fantasy.tips.4")}</li>
+            <li>{t("gen.fantasy.tips.5")}</li>
+          </ul>
+
+          <p class="mt-4">{t("gen.fantasy.note")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

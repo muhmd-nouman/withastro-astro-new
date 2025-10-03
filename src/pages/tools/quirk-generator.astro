@@ -1,0 +1,68 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Character Quirk Generator" 
+  description="Generate unique character quirks and personality traits for creative writing, D&D, and storytelling"
+>
+  <TextTransformer 
+    client:load
+    title="Character Quirk Generator" 
+    description="Create unique personality quirks for your characters" 
+    transformType="quirks"
+    placeholder=""
+    isGenerator={true}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Character Quirk Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Character Quirk Generator creates unique personality traits, habits, and behavioral quirks that bring depth and authenticity to your characters. Perfect for writers, game masters, and anyone creating memorable characters.</p>
+          <p>Quirks are the small, distinctive traits that make characters feel real and relatable. They can be endearing habits, unusual behaviors, or interesting personality traits that set your character apart.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Types of Quirks Generated</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Speech Patterns:</strong> Unique ways of speaking or communicating</li>
+            <li><strong>Physical Habits:</strong> Distinctive gestures or movements</li>
+            <li><strong>Behavioral Quirks:</strong> Unusual habits or routines</li>
+            <li><strong>Superstitions:</strong> Beliefs that influence behavior</li>
+            <li><strong>Collections:</strong> Things the character obsessively gathers</li>
+            <li><strong>Social Quirks:</strong> How they interact with others</li>
+            <li><strong>Nervous Habits:</strong> What they do when stressed or anxious</li>
+            <li><strong>Daily Rituals:</strong> Specific routines they must follow</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Novel and short story characters</li>
+            <li>D&D and RPG character creation</li>
+            <li>Screenplay and script writing</li>
+            <li>Acting and improv exercises</li>
+            <li>Game development and NPC creation</li>
+            <li>Creative writing workshops</li>
+            <li>Character development exercises</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Why Quirks Matter</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Memorability:</strong> Quirks make characters stick in readers' minds</li>
+            <li><strong>Authenticity:</strong> Real people have quirks, so should fictional characters</li>
+            <li><strong>Conflict Potential:</strong> Quirks can create interesting story situations</li>
+            <li><strong>Character Growth:</strong> Quirks can evolve throughout the story</li>
+            <li><strong>Relatability:</strong> Readers connect with flawed, quirky characters</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Using Quirks Effectively</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Don't overload characters with too many quirks</li>
+            <li>Make sure quirks serve the story or character development</li>
+            <li>Consider how quirks might change over time</li>
+            <li>Use quirks to reveal character backstory</li>
+            <li>Balance endearing and annoying traits</li>
+          </ul>
+          <p class="mt-4">Click the generate button to discover unique quirks that will bring your characters to life!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,49 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout 
+  title={t("toolCategory.textGenerators.bold.title")}
+  description={t("toolCategory.textGenerators.bold.description")}
+>
+  <TextTransformer 
+    client:load
+    title={t("toolCategory.textGenerators.bold.title")}
+    description={t("boldText.description")}
+    transformType="bold"
+    placeholder={t("boldText.input.placeholder")}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("boldText.about.title")}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t("boldText.about.p1")}</p>
+          <p>{t("boldText.about.p2")}</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("boldText.usage.title")}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t("boldText.usage.step1")}</li>
+            <li>{t("boldText.usage.step2")}</li>
+            <li>{t("boldText.usage.step3")}</li>
+            <li>{t("boldText.usage.step4")}</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("boldText.where.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("boldText.where.social")}</li>
+            <li>{t("boldText.where.messaging")}</li>
+            <li>{t("boldText.where.usernames")}</li>
+            <li>{t("boldText.where.captions")}</li>
+            <li>{t("boldText.where.anywhere")}</li>
+          </ul>
+          <p class="mt-4">{t("boldText.note")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,107 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('tiktok.title')} 
+  description={t('tiktok.description')}
+>
+  <TextTransformer 
+    client:load
+    title={t('tiktok.title')} 
+    description={t('tiktok.shortdesc')} 
+    transformType="tiktok"
+    placeholder={t('tiktok.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('tiktok.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('tiktok.about1')}</p>
+          <p>{t('tiktok.about2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.featuresTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.feature1')}</li>
+            <li>{t('tiktok.feature2')}</li>
+            <li>{t('tiktok.feature3')}</li>
+            <li>{t('tiktok.feature4')}</li>
+            <li>{t('tiktok.feature5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.perfectForTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.perfect1')}</li>
+            <li>{t('tiktok.perfect2')}</li>
+            <li>{t('tiktok.perfect3')}</li>
+            <li>{t('tiktok.perfect4')}</li>
+            <li>{t('tiktok.perfect5')}</li>
+            <li>{t('tiktok.perfect6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.strategyTitle')}</h3>
+          <p>{t('tiktok.strategyIntro')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.strategy1')}</li>
+            <li>{t('tiktok.strategy2')}</li>
+            <li>{t('tiktok.strategy3')}</li>
+            <li>{t('tiktok.strategy4')}</li>
+            <li>{t('tiktok.strategy5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.crossPlatformTitle')}</h3>
+          <p>{t('tiktok.crossPlatformIntro')}</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.cross1')}</li>
+            <li>{t('tiktok.cross2')}</li>
+            <li>{t('tiktok.cross3')}</li>
+            <li>{t('tiktok.cross4')}</li>
+            <li>{t('tiktok.cross5')}</li>
+            <li>{t('tiktok.cross6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.trendsTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.trend1')}</li>
+            <li>{t('tiktok.trend2')}</li>
+            <li>{t('tiktok.trend3')}</li>
+            <li>{t('tiktok.trend4')}</li>
+            <li>{t('tiktok.trend5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('tiktok.bestPracticesTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('tiktok.practice1')}</li>
+            <li>{t('tiktok.practice2')}</li>
+            <li>{t('tiktok.practice3')}</li>
+            <li>{t('tiktok.practice4')}</li>
+            <li>{t('tiktok.practice5')}</li>
+          </ul>
+
+          <p class="mt-4">{t('tiktok.footer')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,108 @@
+{
+  "site": {
+    "seo.title": "Unicode-Zeichen und Symbole - Unsichtbare Symbole",
+    "description": "Entdecken Sie die faszinierende Welt der Unicode-Zeichen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "unicode": "Unicode-Liste",
+    "categories": "Kategorien"
+  },
+  "unicode": {
+    "details": "Details",
+    "category": "Kategorie",
+    "decimal": "Dezimal",
+    "htmlEntity": "HTML-Entity",
+    "content": {
+      "title": "Über dieses Zeichen",
+      "usage": "Häufige Verwendung",
+      "history": "Geschichte",
+      "technical": "Technische Details"
+    },
+    "related": {
+      "title": "Verwandte Unicode-Zeichen",
+      "category": "Mehr aus dieser Kategorie",
+      "similar": "Ähnliche Zeichen"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "unicode": "Unicode",
+    "categories": "Kategorien"
+  },
+  "page": {
+    "title": "Coole Symbole - Symbole Kopieren & Einfügen | Unsichtbares Symbol",
+    "description": "Durchsuchen Sie eine unbegrenzte Auswahl an coolen Symbolen einschließlich Sterne, Mathematik, Pfeile, Orte, heilige Symbole und vieles mehr. Wählen Sie Ihren Favoriten und kopieren Sie mit 1 Klick kostenlos!"
+  },
+  "header": {
+    "title": "Coole Symbole",
+    "subtitle": "Coole Symbole sind einzigartige Zeichen und Icons, die das visuelle Interesse steigern und Emotionen oder Ideen mit einzigartigen Symbolen ausdrücken. Sie werden weit verbreitet in sozialen Medien, Messaging-Apps und Websites verwendet, um Inhalte ansprechender zu machen."
+  },
+  "howItWorks": {
+    "title": "Wie funktioniert es oder wie kopiert man coole Symbole?",
+    "description": "Tippen Sie auf ein beliebiges Symbol, um seine Details zu sehen, dann tippen Sie auf",
+    "copyButton": "\"In Zwischenablage kopieren\"",
+    "toCopy": "um es zu kopieren."
+  },
+  "buttons": {
+    "copy": "Kopieren",
+    "copied": "Kopiert!"
+  },
+  "symbolTypes": {
+    "title": "Arten von Coolen Symbolen:",
+    "emojis": {
+      "title": "Emojis:",
+      "description": "Bildliche Icons, die Emotionen, Objekte oder Konzepte darstellen. Zum Beispiel: 😊, 🚀, 🎉."
+    },
+    "unicode": {
+      "title": "Unicode-Zeichen:",
+      "description": "Spezielle Zeichen aus dem Unicode-Standard, wie Sterne (★), Herzen (♥) oder Pfeile (→)."
+    },
+    "ascii": {
+      "title": "ASCII-Kunst:",
+      "description": "Kreative Designs mit Standard-Tastaturzeichen, die oft Bilder oder Muster bilden."
+    },
+    "currency": {
+      "title": "Währungssymbole:",
+      "description": "Darstellungen verschiedener Währungen, wie $, €, ¥ oder £."
+    },
+    "mathematical": {
+      "title": "Mathematische Symbole:",
+      "description": "Zeichen, die in mathematischen Ausdrücken verwendet werden, wie ∑ (Summation), ∞ (Unendlichkeit) oder √ (Quadratwurzel)."
+    }
+  },
+  "usage": {
+    "title": "Verwendung Cooler Symbole:",
+    "description": "Die Einbindung cooler Symbole in Ihre digitalen Inhalte kann sie ansprechender machen und Nachrichten effektiver vermitteln. Hier sind einige Tipps:",
+    "copyPaste": {
+      "title": "Kopieren und Einfügen:",
+      "description": "Viele Websites und Apps ermöglichen es Ihnen, Symbole direkt zu kopieren und in Ihre Inhalte einzufügen."
+    },
+    "shortcuts": {
+      "title": "Tastenkombinationen:",
+      "description": "Einige Symbole können mit Tastenkombinationen eingefügt werden. Zum Beispiel können Sie unter Windows Alt-Codes verwenden; auf dem Mac können Sie die Wahltaste mit anderen Tasten verwenden."
+    },
+    "characterMap": {
+      "title": "Zeichentabellen-Tools:",
+      "description": "Betriebssysteme enthalten oft Zeichentabellen-Dienstprogramme, mit denen Sie Sonderzeichen auswählen und einfügen können."
+    }
+  },
+  "considerations": {
+    "title": "Überlegungen:",
+    "compatibility": {
+      "title": "Kompatibilität:",
+      "description": "Stellen Sie sicher, dass die von Ihnen verwendeten Symbole auf verschiedenen Geräten und Plattformen unterstützt werden, um Konsistenz zu gewährleisten."
+    },
+    "readability": {
+      "title": "Lesbarkeit:",
+      "description": "Verwenden Sie Symbole sparsam, um Unordnung zu vermeiden und sicherzustellen, dass Ihre Nachricht klar bleibt."
+    },
+    "cultural": {
+      "title": "Kulturelle Unterschiede:",
+      "description": "Seien Sie sich bewusst, dass einige Symbole in verschiedenen Kulturen unterschiedliche Bedeutungen haben können."
+    }
+  },
+  "aria": {
+    "copySymbol": "{symbol} kopieren"
+  }
+}

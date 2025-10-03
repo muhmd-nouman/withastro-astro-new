@@ -1,0 +1,384 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Type, Palette, Languages, Hash, User, Sparkles, Eye, Bold, Italic, RotateCcw, Circle, Zap, Waves, MessageSquare, Shuffle, Instagram, Facebook, Music, Sword, Skull, Crown, Heart, Globe, Gamepad2, Cat, AtSign, Star, Wand2 } from 'lucide-react';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+    // Add more languages as needed
+  ];
+}
+
+
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+
+
+const toolCategories = {
+  textGenerators: [
+    {
+      title: t("toolCategory.textGenerators.fancyText.title"),
+      description: t("toolCategory.textGenerators.fancyText.description"),
+      url: "/tools/fancy-text/",
+      icon: Sparkles
+    },
+    {
+      title: t("toolCategory.textGenerators.stealthSymbol.title"),
+      description: t("toolCategory.textGenerators.stealthSymbol.description"),
+      url: "/tools/stealth-symbol/",
+      icon: Eye
+    },
+    {
+      title: t("toolCategory.textGenerators.boldText.title"),
+      description: t("toolCategory.textGenerators.boldText.description"),
+      url: "/tools/bold-text/",
+      icon: Bold
+    },
+    {
+      title: t("toolCategory.textGenerators.cursiveText.title"),
+      description: t("toolCategory.textGenerators.cursiveText.description"),
+      url: "/tools/cursive-text/",
+      icon: Italic
+    },
+    {
+      title: t("toolCategory.textGenerators.italicText.title"),
+      description: t("toolCategory.textGenerators.italicText.description"),
+      url: "/tools/italic-text/",
+      icon: Italic
+    },
+    {
+      title: t("toolCategory.textGenerators.reverseText.title"),
+      description: t("toolCategory.textGenerators.reverseText.description"),
+      url: "/tools/reverse-text/",
+      icon: RotateCcw
+    },
+    {
+      title: t("toolCategory.textGenerators.bubbleText.title"),
+      description: t("toolCategory.textGenerators.bubbleText.description"),
+      url: "/tools/bubble-text/",
+      icon: Circle
+    },
+    {
+      title: t("toolCategory.textGenerators.glitchText.title"),
+      description: t("toolCategory.textGenerators.glitchText.description"),
+      url: "/tools/glitch-text-generator/",
+      icon: Zap
+    },
+    {
+      title: t("toolCategory.textGenerators.curvedText.title"),
+      description: t("toolCategory.textGenerators.curvedText.description"),
+      url: "/tools/curved-text-generator/",
+      icon: Waves
+    },
+    {
+      title: t("toolCategory.textGenerators.discordBold.title"),
+      description: t("toolCategory.textGenerators.discordBold.description"),
+      url: "/tools/discord-bold-text/",
+      icon: MessageSquare
+    },
+    {
+      title: t("toolCategory.textGenerators.quirkText.title"),
+      description: t("toolCategory.textGenerators.quirkText.description"),
+      url: "/tools/quirk-generator/",
+      icon: Shuffle
+    }
+  ],
+  fontGenerators: [
+    {
+      title: t("toolCategory.fontGenerators.stylishFontsGen.title"),
+      description: t("toolCategory.fontGenerators.stylishFontsGen.description"),
+      url: "/tools/stylish-fonts-generator/",
+      icon: Palette
+    },
+    {
+      title: t("toolCategory.fontGenerators.stylishFonts.title"),
+      description: t("toolCategory.fontGenerators.stylishFonts.description"),
+      url: "/tools/stylish-fonts/",
+      icon: Type
+    },
+    {
+      title: t("toolCategory.fontGenerators.instagramFonts.title"),
+      description: t("toolCategory.fontGenerators.instagramFonts.description"),
+      url: "/tools/instagram-fonts-generator/",
+      icon: Instagram
+    },
+    {
+      title: t("toolCategory.fontGenerators.facebookFonts.title"),
+      description: t("toolCategory.fontGenerators.facebookFonts.description"),
+      url: "/tools/facebook-fonts-generator/",
+      icon: Facebook
+    },
+    {
+      title: t("toolCategory.fontGenerators.igFonts.title"),
+      description: t("toolCategory.fontGenerators.igFonts.description"),
+      url: "/tools/ig-fonts/",
+      icon: Instagram
+    },
+    {
+      title: t("toolCategory.fontGenerators.tiktokFonts.title"),
+      description: t("toolCategory.fontGenerators.tiktokFonts.description"),
+      url: "/tools/tiktok-font/",
+      icon: Music
+    },
+    {
+      title: t("toolCategory.fontGenerators.metalFonts.title"),
+      description: t("toolCategory.fontGenerators.metalFonts.description"),
+      url: "/tools/metal-font-generator/",
+      icon: Music
+    },
+    {
+      title: t("toolCategory.fontGenerators.fantasyFonts.title"),
+      description: t("toolCategory.fontGenerators.fantasyFonts.description"),
+      url: "/tools/fantasy-fonts/",
+      icon: Sword
+    },
+    {
+      title: t("toolCategory.fontGenerators.creepyFonts.title"),
+      description: t("toolCategory.fontGenerators.creepyFonts.description"),
+      url: `/tools/creepy-fonts/`,
+      icon: Skull
+    }
+  ],
+  translators: [
+    {
+      title: t("toolCategory.translators.wingdings.title"),
+      description: t("toolCategory.translators.wingdings.description"),
+      url: "/tools/wingdings-translator/",
+      icon: Hash
+    },
+    {
+      title: t("toolCategory.translators.uwu.title"),
+      description: t("toolCategory.translators.uwu.description"),
+      url: "/tools/uwu-translator/",
+      icon: Heart
+    },
+    {
+      title: t("toolCategory.translators.oldEnglish.title"),
+      description: t("toolCategory.translators.oldEnglish.description"),
+      url: "/tools/old-english-translator/",
+      icon: Crown
+    },
+    {
+      title: t("toolCategory.translators.vietnamese.title"),
+      description: t("toolCategory.translators.vietnamese.description"),
+      url: "/tools/vietnamese-translator/",
+      icon: Globe
+    },
+    {
+      title: t("toolCategory.translators.simlish.title"),
+      description: t("toolCategory.translators.simlish.description"),
+      url: "/tools/simlish-translator/",
+      icon: Gamepad2
+    },
+    {
+      title: t("toolCategory.translators.highValyrian.title"),
+      description: t("toolCategory.translators.highValyrian.description"),
+      url: "/tools/high-valyrian-translator/",
+      icon: Crown
+    }
+  ],
+  symbolsAndSpecial: [
+    {
+      title: t("toolCategory.symbols.demonic.title"),
+      description: t("toolCategory.symbols.demonic.description"),
+      url: "/tools/demonic-symbols/",
+      icon: Skull
+    },
+    {
+      title: t("toolCategory.symbols.coolSymbols.title"),
+      description: t("toolCategory.symbols.coolSymbols.description"),
+      url: "/cool-symbols/",
+      icon: Star
+    },
+    {
+      title: t("toolCategory.symbols.textSymbols.title"),
+      description: t("toolCategory.symbols.textSymbols.description"),
+      url: "/tools/special-characters/",
+      icon: Hash
+    }
+  ],
+  nameGenerators: [
+    {
+      title: t("toolCategory.names.halfElf.title"),
+      description: t("toolCategory.names.halfElf.description"),
+      url: "/tools/half-elf-name-generator/",
+      icon: Wand2
+    },
+    {
+      title: t("toolCategory.names.catName.title"),
+      description: t("toolCategory.names.catName.description"),
+      url: "/tools/cat-name-generator/",
+      icon: Cat
+    },
+    {
+      title: t("toolCategory.names.aestheticUsername.title"),
+      description: t("toolCategory.names.aestheticUsername.description"),
+      url: "/tools/aesthetic-usernames/",
+      icon: AtSign
+    }
+  ]
+};
+
+const categoryIcons = {
+  textGenerators: Type,
+  fontGenerators: Palette,
+  translators: Languages,
+  symbolsAndSpecial: Hash,
+  nameGenerators: User
+};
+
+const categoryTitles = {
+  textGenerators: "Text Generators",
+  fontGenerators: "Font Generators", 
+  translators: "Translators",
+  symbolsAndSpecial: "Symbols & Special",
+  nameGenerators: "Name Generators"
+};
+export const prerender = true;
+---
+
+<Layout title="Text Tools & Generators - Free Online Text Utilities">
+  <div class="min-h-screen bg-gray-50 py-16 mx-auto">
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold text-black mb-6">
+          Free Text Tools & Generators
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Transform your text with our comprehensive collection of free online tools. 
+          Generate stylish fonts, convert text, create symbols, and more.
+        </p>
+        
+        <!-- Ad Space - Top Banner -->
+        <div class="w-full h-24 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-12">
+          <span class="text-gray-500 text-sm">Advertisement Space - 728x90</span>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="space-y-16">
+        {Object.entries(toolCategories).map(([categoryKey, tools]) => {
+          const CategoryIcon = categoryIcons[categoryKey];
+          const categoryTitle = categoryTitles[categoryKey];
+          
+          return (
+            <section  class="space-y-8">
+              <!-- Category Header -->
+              <div class="flex items-center space-x-4 mb-8">
+                <div class="p-3 bg-black text-white rounded-lg">
+                  <CategoryIcon className="w-8 h-8" />
+                </div>
+                <div>
+                  <h2 class="text-3xl font-bold text-black">{categoryTitle}</h2>
+                  <p class="text-gray-600">Professional tools for text transformation</p>
+                </div>
+              </div>
+
+              <!-- Tools Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {tools.map((tool, index) => {
+                  const ToolIcon = tool.icon;
+                  
+                  return (
+                    <a 
+                      href={tool.url}
+                      class="group block p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-black hover:shadow-lg transition-all duration-300"
+                 
+                    >
+                      <div class="flex items-start space-x-4">
+                        <div class="p-3 bg-gray-100 group-hover:bg-black group-hover:text-white rounded-lg transition-colors duration-300">
+                          <ToolIcon className="w-6 h-6" />
+                        </div>
+                        <div class="flex-1">
+                          <h3 class="text-lg font-semibold text-black group-hover:text-black mb-2">
+                            {tool.title}
+                          </h3>
+                          <p class="text-gray-600 text-sm leading-relaxed">
+                            {tool.description}
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
+              <!-- Ad Space - Between Categories -->
+              {categoryKey !== 'nameGenerators' && (
+                <div class="w-full h-32 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center my-12">
+                  <span class="text-gray-500 text-sm">Advertisement Space - 728x90</span>
+                </div>
+              )}
+            </section>
+          );
+        })}
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="mt-20 text-center">
+        <div class="bg-gray-50 rounded-2xl p-12 mb-12">
+          <h2 class="text-3xl font-bold text-black mb-6">
+            Why Choose Our Text Tools?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8" />
+              </div>
+              <h3 class="text-xl font-semibold text-black mb-2">Lightning Fast</h3>
+              <p class="text-gray-600">Instant text transformation with no delays</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8" />
+              </div>
+              <h3 class="text-xl font-semibold text-black mb-2">100% Free</h3>
+              <p class="text-gray-600">All tools are completely free to use</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8" />
+              </div>
+              <h3 class="text-xl font-semibold text-black mb-2">Universal</h3>
+              <p class="text-gray-600">Works on all devices and platforms</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Ad Space -->
+        <div class="w-full h-32 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+          <span class="text-gray-500 text-sm">Advertisement Space - 728x90</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Custom hover animations */
+  .group:hover {
+    transform: translateY(-2px);
+  }
+  
+  a, button, .group {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  a:focus, button:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+</style>

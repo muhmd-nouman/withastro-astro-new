@@ -1,0 +1,74 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Metal Font Generator" 
+  description="Create heavy metal and rock-style fonts perfect for band names, logos, and metal-themed projects"
+>
+  <TextTransformer 
+    client:load
+    title="Metal Font Generator" 
+    description="Transform your text into heavy metal style fonts" 
+    transformType="metal"
+    placeholder="Enter your text to create metal fonts..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Metal Font Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Metal Font Generator creates heavy, aggressive, and powerful text styles perfect for metal bands, rock music projects, and any content that needs a bold, rebellious edge.</p>
+          <p>Metal typography is characterized by bold, angular letterforms that convey power, rebellion, and intensity - core elements of heavy metal culture and aesthetics.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Metal Font Features</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Gothic/Fraktur Base:</strong> Uses medieval-inspired letterforms</li>
+            <li><strong>Uppercase Styling:</strong> Converted to all caps for maximum impact</li>
+            <li><strong>Fire Symbols:</strong> Wrapped with flame emojis for metal aesthetic</li>
+            <li><strong>Bold Weight:</strong> Heavy, thick letterforms that command attention</li>
+            <li><strong>Angular Design:</strong> Sharp, aggressive character shapes</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Heavy metal band names and logos</li>
+            <li>Rock concert posters and flyers</li>
+            <li>Album covers and music artwork</li>
+            <li>Gaming clan names and tags</li>
+            <li>Motorcycle and biker culture content</li>
+            <li>Horror and dark fantasy projects</li>
+            <li>Tattoo design text elements</li>
+            <li>Extreme sports branding</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Metal Typography History</h3>
+          <p>Metal fonts draw inspiration from:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Gothic Architecture:</strong> Medieval cathedrals and stonework</li>
+            <li><strong>Blackletter Scripts:</strong> Traditional Germanic calligraphy</li>
+            <li><strong>Horror Movie Posters:</strong> 1970s-80s horror film typography</li>
+            <li><strong>Motorcycle Culture:</strong> Biker gang and custom bike aesthetics</li>
+            <li><strong>Album Art Evolution:</strong> From Black Sabbath to modern metal</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Famous Metal Typography</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Black Sabbath's iconic gothic lettering</li>
+            <li>Iron Maiden's distinctive angular style</li>
+            <li>Metallica's sharp, metallic appearance</li>
+            <li>Death metal's illegible but atmospheric fonts</li>
+            <li>Power metal's fantasy-inspired lettering</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Design Tips</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Use sparingly for maximum impact</li>
+            <li>Pair with dark backgrounds for contrast</li>
+            <li>Consider adding texture or distress effects</li>
+            <li>Ensure readability despite heavy styling</li>
+            <li>Match the intensity to your content</li>
+          </ul>
+          <p class="mt-4">🔥 Create text that rocks as hard as your music! 🔥</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

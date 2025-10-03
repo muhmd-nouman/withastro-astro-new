@@ -1,0 +1,48 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Wingdings Translator" 
+  description="Convert your text into Wingdings symbols with our free online Wingdings translator"
+>
+  <TextTransformer 
+    client:load
+    title="Wingdings Translator" 
+    description="Transform your text into fun Wingdings symbols and emojis" 
+    transformType="wingdings"
+    placeholder="Enter your text to translate it to Wingdings..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Wingdings Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Wingdings Translator converts regular text into Wingdings-style symbols and emojis. Wingdings is a famous symbol font that replaces letters with various icons, symbols, and pictographs.</p>
+          <p>Our translator uses modern Unicode emojis and symbols that are similar to the original Wingdings font, making your text more visually interesting and fun to read.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Type your text in the input field above</li>
+            <li>Watch as each letter is converted to a Wingdings-style symbol</li>
+            <li>Click "Copy" to copy the translated symbols</li>
+            <li>Share your symbolic message with friends</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Fun Uses for Wingdings</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Create secret messages using symbols</li>
+            <li>Add visual flair to social media posts</li>
+            <li>Make puzzles and brain teasers</li>
+            <li>Create unique decorative text</li>
+            <li>Send coded messages to friends</li>
+            <li>Add mystery to your communications</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">About Wingdings Font</h3>
+          <p>Wingdings was created by Microsoft and became famous for replacing standard letters with symbols. Our translator recreates this experience using modern Unicode symbols that work across all platforms and devices.</p>
+          <p class="mt-4">Note: The symbols used are Unicode emojis and special characters that should display correctly on most modern devices and platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

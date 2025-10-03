@@ -1,0 +1,65 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Facebook Fonts Generator" 
+  description="Generate stylish fonts optimized for Facebook posts, comments, and profiles"
+>
+  <TextTransformer 
+    client:load
+    title="Facebook Fonts Generator" 
+    description="Create eye-catching text styles perfect for Facebook" 
+    transformType="facebook"
+    placeholder="Enter your text to generate Facebook-ready fonts..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Facebook Fonts Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Facebook Fonts Generator creates stylish text variations that are specifically optimized for Facebook. These fonts work perfectly in Facebook posts, comments, profiles, and messages.</p>
+          <p>Stand out in the Facebook feed with unique text styles that grab attention and increase engagement on your posts and comments.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Type your text in the input field above</li>
+            <li>Choose from Facebook-optimized font styles</li>
+            <li>Click "Copy" on your preferred style</li>
+            <li>Paste directly into Facebook posts, comments, or your profile</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Facebook-Optimized Styles</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Bold Script:</strong> Perfect for important announcements</li>
+            <li><strong>Double-struck:</strong> Great visibility in the news feed</li>
+            <li><strong>Small Caps:</strong> Professional look for business pages</li>
+            <li><strong>Circled:</strong> Fun and engaging for casual posts</li>
+            <li><strong>Elegant Script:</strong> Ideal for special occasions</li>
+            <li><strong>Alternating Case:</strong> Trendy and attention-grabbing</li>
+            <li><strong>Spaced Text:</strong> Emphasizes each word</li>
+            <li><strong>Uppercase Spaced:</strong> Bold and commanding</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Best Uses on Facebook</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Make your posts stand out in the news feed</li>
+            <li>Create eye-catching Facebook page names</li>
+            <li>Enhance your Facebook bio and about section</li>
+            <li>Add style to event announcements</li>
+            <li>Make comments more noticeable</li>
+            <li>Create engaging Facebook Stories text</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Tips for Facebook Success</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Use stylish fonts sparingly for maximum impact</li>
+            <li>Choose readable fonts for important information</li>
+            <li>Test your text on mobile devices</li>
+            <li>Combine with emojis for extra engagement</li>
+            <li>Keep your audience and brand voice in mind</li>
+          </ul>
+          <p class="mt-4">Note: These fonts are tested to work well on Facebook across desktop and mobile devices. They use Unicode characters that are widely supported.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

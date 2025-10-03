@@ -1,0 +1,57 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="Stylish Fonts Generator" 
+  description="Generate multiple stylish font variations for your text with our free stylish fonts generator"
+>
+  <TextTransformer 
+    client:load
+    title="Stylish Fonts Generator" 
+    description="Create beautiful, stylish text with multiple font variations" 
+    transformType="stylish"
+    placeholder="Enter your text to generate stylish fonts..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About Stylish Fonts Generator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The Stylish Fonts Generator creates multiple beautiful font variations of your text using Unicode characters. These stylish fonts work across most platforms and don't require any special software to display.</p>
+          <p>Each font style has its own unique character and aesthetic, from elegant scripts to bold modern designs, giving you plenty of options to make your text stand out.</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your text in the input field above</li>
+            <li>Browse through the various stylish font options</li>
+            <li>Click "Copy" next to any font style you like</li>
+            <li>Paste your stylish text wherever you want to use it</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Font Styles Included</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Script:</strong> Elegant, flowing handwriting style</li>
+            <li><strong>Bold Script:</strong> Thicker, more prominent script letters</li>
+            <li><strong>Double-struck:</strong> Mathematical blackboard bold style</li>
+            <li><strong>Bold Fraktur:</strong> Gothic, medieval-inspired letters</li>
+            <li><strong>Sans-serif:</strong> Clean, modern without serifs</li>
+            <li><strong>Small Caps:</strong> Compact capital letters</li>
+            <li><strong>Squared:</strong> Letters enclosed in squares</li>
+            <li><strong>Circled:</strong> Letters enclosed in circles</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Social media profiles and posts</li>
+            <li>Website headers and titles</li>
+            <li>Creative projects and designs</li>
+            <li>Personal branding and logos</li>
+            <li>Invitations and announcements</li>
+            <li>Art and typography projects</li>
+          </ul>
+          <p class="mt-4">Note: These stylish fonts use Unicode characters that are supported by most modern devices and platforms. However, some older systems might not display all styles correctly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

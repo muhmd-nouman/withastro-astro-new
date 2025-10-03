@@ -1,0 +1,54 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+---
+
+<MainLayout 
+  title="UwU Translator" 
+  description="Convert your text into cute UwU speak with our free online UwU translator"
+>
+  <TextTransformer 
+    client:load
+    title="UwU Translator" 
+    description="Transform your text into adorable UwU language" 
+    transformType="uwu"
+    placeholder="Enter your text to make it uwu-fy..."
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About UwU Translator</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>The UwU Translator converts regular text into the adorable "UwU speak" that's popular in internet culture, anime communities, and among furries. It makes your text sound cute and playful!</p>
+          <p>UwU speak involves replacing certain letters and adding cute expressions to make text sound more kawaii (cute). It's a fun way to express yourself online!</p>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">How to Use</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>Enter your normal text in the input box</li>
+            <li>Watch it transform into cute UwU speak</li>
+            <li>Copy the UwU-ified text</li>
+            <li>Share your kawaii message with friends</li>
+          </ol>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">UwU Transformations</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Replaces "r" and "l" with "w" (hewwo instead of hello)</li>
+            <li>Changes "n" + vowel to "ny" + vowel (nyan instead of nan)</li>
+            <li>Adds cute emoticons like uwu, owo, >w<, ^w^</li>
+            <li>Makes "th" sounds into "d" sounds</li>
+            <li>Converts text to lowercase for extra cuteness</li>
+          </ul>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">Perfect for</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Anime and manga communities</li>
+            <li>Gaming chats and Discord servers</li>
+            <li>Social media posts for extra cuteness</li>
+            <li>Roleplaying and character interactions</li>
+            <li>Adding kawaii flair to messages</li>
+            <li>Making friends smile with cute text</li>
+          </ul>
+          <p class="mt-4">Remember: UwU speak is meant to be fun and cute! Use it with friends who appreciate this style of communication. UwU! (◡ ω ◡)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

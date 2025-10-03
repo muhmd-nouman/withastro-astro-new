@@ -1,0 +1,99 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('old.title')} 
+  description={t('old.desc')}
+>
+  <TextTransformer 
+    client:load
+    title={t('old.title')} 
+    description={t('old.tDesc')} 
+    transformType="oldenglish"
+    placeholder={t('old.placeholder')}
+  />
+
+  <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('old.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('old.p1')}</p>
+          <p>{t('old.p2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('old.how.title')}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t('old.how.1')}</li>
+            <li>{t('old.how.2')}</li>
+            <li>{t('old.how.3')}</li>
+            <li>{t('old.how.4')}</li>
+          </ol>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('old.features.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('old.features.1')}</li>
+            <li>{t('old.features.2')}</li>
+            <li>{t('old.features.3')}</li>
+            <li>{t('old.features.4')}</li>
+            <li>{t('old.features.5')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('old.uses.title')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('old.uses.1')}</li>
+            <li>{t('old.uses.2')}</li>
+            <li>{t('old.uses.3')}</li>
+            <li>{t('old.uses.4')}</li>
+            <li>{t('old.uses.5')}</li>
+            <li>{t('old.uses.6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('old.transformations.title')}</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>{t('old.transformations.leftTitle')}</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('old.transformations.1')}</li>
+                <li>{t('old.transformations.2')}</li>
+                <li>{t('old.transformations.3')}</li>
+                <li>{t('old.transformations.4')}</li>
+                <li>{t('old.transformations.5')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>{t('old.transformations.rightTitle')}</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('old.transformations.6')}</li>
+                <li>{t('old.transformations.7')}</li>
+                <li>{t('old.transformations.8')}</li>
+                <li>{t('old.transformations.9')}</li>
+                <li>{t('old.transformations.10')}</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="mt-4">{t('old.note')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

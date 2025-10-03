@@ -1,0 +1,123 @@
+{
+  "sidebar": {
+    "tools": "Outils",
+    "invisible_character": "Caractère invisible",
+    "hidden_text_detector": "Détecteur de texte caché",
+    "blank_space_previewer": "Aperçu d’espace blanc",
+    "categories": "Catégories",
+    "symbols": "Symboles",
+    "emojis": "Émojis",
+    "mathematical": "Mathématique",
+    "arrows": "Flèches",
+    "currency": "Monnaie",
+    "resources": "Ressources",
+    "unicode_standards": "Normes Unicode",
+    "documentation": "Documentation",
+    "api_reference": "Référence API"
+  },
+  "site": {
+    "title": "Invisible Symbol",
+    "description": "Explore the fascinating world of Unicode characters",
+    "seo": {
+      "title": "Unicode Characters and Symbols - Invisible Symbols",
+      "description": "Explore the fascinating world of Unicode characters"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "unicode": "Unicode List",
+    "categories": "Categories"
+  },
+  "unicode": {
+    "details": "Details",
+    "category": "Category",
+    "decimal": "Decimal",
+    "htmlEntity": "HTML Entity",
+    "content": {
+      "title": "About this Character",
+      "usage": "Common Usage",
+      "history": "History",
+      "technical": "Technical Details"
+    },
+    "related": {
+      "title": "Related Unicode Characters",
+      "category": "More from this category",
+      "similar": "Similar Characters"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "unicode": "Unicode",
+    "categories": "Categories"
+  },
+  "coolSymbols": {
+    "title": "Cool Symbols",
+    "description": "Cool symbols are unique characters and icons that enhance visual interest and express emotions or ideas using unique symbols. They are widely used across social media, messaging apps, and websites to make content more engaging.",
+    "howItWorks": {
+      "title": "How It Works",
+      "description": "Tap on any symbol to see its details, then tap",
+      "copyText": "\"Copy to clipboard\""
+    }
+  },
+  "categories": {
+    "emoji": "Emojis",
+    "symbols": "Symbols",
+    "math": "Mathematical Symbols"
+  },
+  "symbols": {
+    "heart": "Heart Symbol",
+    "star": "Star Symbol"
+  },
+  "common": {
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "types": {
+    "title": "Types of Cool Symbols:",
+    "emoji": {
+      "title": "Emojis",
+      "description": "Pictorial icons representing emotions, objects, or concepts. For example: 😊, 🚀, 🎉."
+    },
+    "unicode": {
+      "title": "Unicode Characters",
+      "description": "Special characters from the Unicode Standard, such as stars (★), hearts (♥), or arrows (→)."
+    }
+  },
+  "usage": {
+    "title": "Using Cool Symbols",
+    "description": "Incorporating cool symbols into your digital content can make it more appealing and convey messages more effectively. Here are some tips:",
+    "methods": {
+      "copyPaste": {
+        "title": "Copy and Paste",
+        "description": "Many websites and apps allow you to copy symbols directly and paste them into your content."
+      },
+      "keyboard_shortcuts": {
+        "title": "Keyboard Shortcuts",
+        "description": "Some symbols can be inserted using keyboard shortcuts.",
+        "examples": {
+          "windows": "Use Alt codes",
+          "mac": "Use the Option key with other keys"
+        }
+      },
+      "character_map_tools": {
+        "title": "Character Map Tools",
+        "description": "Operating systems often include character map utilities that let you select and insert special characters."
+      }
+    }
+  },
+  "considerations": {
+    "title": "Considerations",
+    "compatibility": {
+      "title": "Compatibility",
+      "description": "Ensure that the symbols you use are supported across different devices and platforms."
+    },
+    "readability": {
+      "title": "Readability",
+      "description": "Use symbols sparingly to avoid clutter and ensure clarity."
+    },
+    "cultural_differences": {
+      "title": "Cultural Differences",
+      "description": "Some symbols may have different meanings in different cultures."
+    }
+  }
+}

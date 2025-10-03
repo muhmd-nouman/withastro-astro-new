@@ -1,0 +1,107 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t('vietnamese.title')} 
+  description={t('vietnamese.description')}
+>
+  <TextTransformer 
+    client:load
+    title={t('vietnamese.title')} 
+    description={t('vietnamese.shortdesc')} 
+    transformType="vietnamese"
+    placeholder={t('vietnamese.placeholder')}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('vietnamese.aboutTitle')}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t('vietnamese.about1')}</p>
+          <p>{t('vietnamese.about2')}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('vietnamese.supportedTitle')}</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>{t('vietnamese.greetingsTitle')}:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('vietnamese.greet1')}</li>
+                <li>{t('vietnamese.greet2')}</li>
+                <li>{t('vietnamese.greet3')}</li>
+                <li>{t('vietnamese.greet4')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>{t('vietnamese.commonPhrasesTitle')}:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('vietnamese.common1')}</li>
+                <li>{t('vietnamese.common2')}</li>
+                <li>{t('vietnamese.common3')}</li>
+                <li>{t('vietnamese.common4')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>{t('vietnamese.familyTitle')}:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('vietnamese.family1')}</li>
+                <li>{t('vietnamese.family2')}</li>
+                <li>{t('vietnamese.family3')}</li>
+                <li>{t('vietnamese.family4')}</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>{t('vietnamese.wordsTitle')}:</strong></p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>{t('vietnamese.word1')}</li>
+                <li>{t('vietnamese.word2')}</li>
+                <li>{t('vietnamese.word3')}</li>
+                <li>{t('vietnamese.word4')}</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('vietnamese.perfectForTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('vietnamese.perfect1')}</li>
+            <li>{t('vietnamese.perfect2')}</li>
+            <li>{t('vietnamese.perfect3')}</li>
+            <li>{t('vietnamese.perfect4')}</li>
+            <li>{t('vietnamese.perfect5')}</li>
+            <li>{t('vietnamese.perfect6')}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t('vietnamese.languageAboutTitle')}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t('vietnamese.lang1')}</li>
+            <li>{t('vietnamese.lang2')}</li>
+            <li>{t('vietnamese.lang3')}</li>
+            <li>{t('vietnamese.lang4')}</li>
+            <li>{t('vietnamese.lang5')}</li>
+          </ul>
+
+          <p class="mt-4">{t('vietnamese.note')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

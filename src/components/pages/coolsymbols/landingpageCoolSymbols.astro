@@ -1,0 +1,59 @@
+---
+import { Wand2, Type, Package2, Text } from 'lucide-react';
+
+const tools = [
+  {
+    Icon: Wand2,
+    alt: "Wand Icon",
+    title: "Генератор Стелс Символов",
+    description: "Создавайте крутые символы в стиле стелс для вашего текста",
+    href: "/ru/tools/stealth-symbol/",
+  },
+  {
+    Icon: Type,
+    alt: "Type Icon",
+    title: "Исчезающий Текст",
+    description: "Сделайте ваш текст исчезающим с помощью специального форматирования",
+    href: "#",
+  },
+  {
+    Icon: Package2, // Replaced LucideRailSymbol with Package2 as it's not a standard Lucide icon
+    alt: "cool symbols icons",
+    title: "Крутые Символы",
+    description: "Исследуйте и используйте различные крутые символы в ваших проектах",
+    href: "/ru/cool-symbols/",
+  },
+  {
+    Icon: Text,
+    alt: "text symbols icon",
+    title: "Текстовые Символы",
+    description: "Исследуйте и используйте различные текстовые символы",
+    href: "/ru/tools/text-symbols/",
+  },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 px-4">
+    {
+        tools.map((tool) => {
+            const IconComponent = tool.Icon;
+            return (
+                <div class="bg-gray-50 border rounded-lg p-6">
+                    <a
+                        href={tool.href}
+                        title={tool.title}
+                        class="block text-center hover:transform hover:scale-105 transition duration-300"
+                    >
+                        <div class="flex justify-center mb-4">
+                            <IconComponent className="w-8 h-8 text-gray-700" />
+                        </div>
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+                            {tool.title}
+                        </h2>
+                        <p class="text-gray-600">{tool.description}</p>
+                    </a>
+                </div>
+            );
+        })
+    }
+</div>

@@ -1,0 +1,33 @@
+{
+  "site": {
+    "seo.title": "Explorador Unicode",
+    "description": "Explora el fascinante mundo de los caracteres Unicode"
+  },
+  "nav": {
+    "home": "Inicio",
+    "unicode": "Lista Unicode",
+    "categories": "Categorías"
+  },
+  "unicode": {
+    "details": "Detalles",
+    "category": "Categoría",
+    "decimal": "Decimal",
+    "htmlEntity": "Entidad HTML",
+    "content": {
+      "title": "Sobre este Carácter",
+      "usage": "Uso Común",
+      "history": "Historia",
+      "technical": "Detalles Técnicos"
+    },
+    "related": {
+      "title": "Caracteres Unicode Relacionados",
+      "category": "Más de esta categoría",
+      "similar": "Caracteres Similares"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "unicode": "Unicode",
+    "categories": "Categorías"
+  }
+}

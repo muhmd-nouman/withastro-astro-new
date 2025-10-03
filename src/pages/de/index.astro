@@ -1,0 +1,71 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import WelcomeNote from "@/components/pages/home/WelcomeNote.astro";
+import Generator from "@/components/pages/home/Generator.astro";
+import UnicodeTable from "@/components/pages/home/UnicodeTable.tsx";
+import HowToUse from "@/components/pages/home/HowToUse.astro";
+import Use from "@/components/pages/home/Use.astro";
+import Where2Use from "@/components/pages/home/Where2Use.astro";
+import FAQ from "@/components/pages/home/FAQ.astro";
+import ExclusiveFeatures from "@/components/pages/home/ExclusiveFeatures.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("seo.title")} description={t("seo.description")}>
+  <div class="min-h-screen container max-w-7xl mx-auto">
+    <section class="py-6 px-6 md:px-8">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight mt-4 pb-2">
+          {t("main.heading1")}
+        </h1>
+        <p class="text-md md:text-lg lg:text-lg max-w-4xl mx-auto">
+          {t("main.headingp")}
+        </p>
+      </div>
+    </section>
+    <section id="generator">
+      <Generator />
+    </section>
+    <WelcomeNote />
+    <section class="py-12 px-6 md:px-8">
+      <div class="space-y-6 mx-auto">
+        
+        <h2 class="text-2xl md:text-3xl text-center font-bold leading-tight">
+          {t("unicode_table.heading")}
+        </h2>
+        <p class="max-w-4xl mx-auto text-black text-center text-md md:text-lg mb-4">
+          {t("unicode_table.p")}
+        </p>
+        <div class="container mx-auto py-6">
+          <div class="bg-white shadow-md border border-gray-200 rounded-lg p-4 mb-6">
+            <h3 class="text-xl md:text-2xl text-black font-semibold leading-tight">
+              {t("unicode.h3")}
+            </h3>
+            <p class="text-md md:text-lg pt-2 text-gray-600">
+              {t("unicode.p")}
+            </p>
+            <ul class="list-inside list-disc  text-md md:text-lg text-gray-600 ">
+              <li>{t("unicode.category")}</li>
+              <li>{t("unicode.category2")}</li>
+              <li>{t("unicode.category3")}</li>
+              <li>{t("unicode.category4")}</li>
+              <li>{t("unicode.category5")}</li>
+            </ul>
+          </div>
+        </div>
+        
+        <UnicodeTable client:load />
+      </div>
+    </section>
+    <HowToUse />
+    <Use />
+    <ExclusiveFeatures />
+    <Where2Use />
+    <section id="faq" class="px-6 md:px-8">
+      <FAQ />
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,85 @@
+---
+import MainLayout from '@/layouts/Layout.astro';
+import TextTransformer from '@/components/TextTransformer';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'id' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+export const prerender = true;
+---
+
+<MainLayout 
+  title={t("gen.dcbold.title")} 
+  description={t("gen.dcbold.desc")}
+>
+  <TextTransformer 
+    client:load
+    title={t("gen.dcbold.title")} 
+    description={t("gen.dcbold.tDesc")} 
+    transformType="discordbold"
+    placeholder={t("gen.dcbold.placeholder")}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("gen.dcbold.aboutTitle")}</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+          <p>{t("gen.dcbold.p1")}</p>
+          <p>{t("gen.dcbold.p2")}</p>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.dcbold.how.title")}</h3>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>{t("gen.dcbold.how.1")}</li>
+            <li>{t("gen.dcbold.how.2")}</li>
+            <li>{t("gen.dcbold.how.3")}</li>
+            <li>{t("gen.dcbold.how.4")}</li>
+          </ol>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.dcbold.use.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.dcbold.use.username")}</li>
+            <li>{t("gen.dcbold.use.server")}</li>
+            <li>{t("gen.dcbold.use.channel")}</li>
+            <li>{t("gen.dcbold.use.status")}</li>
+            <li>{t("gen.dcbold.use.message")}</li>
+            <li>{t("gen.dcbold.use.nickname")}</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.dcbold.compare.title")}</h3>
+          <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+            <p class="font-semibold mb-2">{t("gen.dcbold.compare.subtitle")}</p>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+              <li>{t("gen.dcbold.compare.md")}</li>
+              <li>{t("gen.dcbold.compare.uc")}</li>
+            </ul>
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-2">{t("gen.dcbold.why.title")}</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>{t("gen.dcbold.why.1")}</li>
+            <li>{t("gen.dcbold.why.2")}</li>
+            <li>{t("gen.dcbold.why.3")}</li>
+            <li>{t("gen.dcbold.why.4")}</li>
+            <li>{t("gen.dcbold.why.5")}</li>
+          </ul>
+
+          <p class="mt-4">{t("gen.dcbold.note")}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
