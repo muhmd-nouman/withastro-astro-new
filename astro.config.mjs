@@ -8,7 +8,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-    site: 'https://invisiblesymbol.com',
+    site: 'https://withastro-astro-new.vercel.app',
     integrations: [mdx(), sitemap(), react()],
     output: 'server',
     adapter: vercel({
