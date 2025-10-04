@@ -1,0 +1,188 @@
+---
+import { CldImage } from 'astro-cloudinary';
+import Logo from "@/assets/images/logo.png"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Facebook, Twitter } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url) || "en";
+const t = useTranslations(lang);
+
+const getLocalizedPath = (path) => {
+  if (!path) {
+    return lang === "en" ? "/" : `/${lang}/`;
+  }
+  return lang === "en" ? `/${path}/` : `/${lang}/${path}/`;
+};
+---
+
+<footer
+  class="flex w-full bg-gray-100 border-t hover:text-accent-foreground text-gray-600 py-6 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20"
+  >
+  <div class="container max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 space-x-12 my-6">
+      <div class="flex flex-col">
+        <CldImage src="My Brand/logo_dwd2ix" height={48} width={48} />
+        <!-- <Image src={Logo} alt="" height={} width={} class="" /> -->
+        <h4 class="text-xl text-black font-bold mb-4">InvisibleSymbol.com</h4>
+        <p>{t("invisible_text_description")}</p>
+      </div>
+      <div class="sm:text-left">
+        <h3 class="text-xl text-gray-900 font-bold mb-4">
+          {t("footer.resources")}
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href={getLocalizedPath("")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.invisibleSymbolTitle")}
+            >
+              {t("footer.invisibleSymbol")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("cool-symbols")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t('navlinks.coolSymbol')}
+            >
+              {t('navlinks.coolSymbol')}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("tools")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.invisibleSymbolTitle")}
+            >
+              {t("navlinks.tools")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("unicode")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.invisibleSymbolTitle")}
+            >
+              {t("navlinks.unicode")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="/write-for-us/"
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.writeForUsTitle")}
+              aria-label={t("footer.writeForUsTitle")}
+            >
+              {t("footer.writeForUs")}
+            </a>
+          </li>
+          <!-- <li>
+            <a
+              href={getLocalizedPath("write-for-us")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.writeForUsTitle")}
+              aria-label={t("footer.writeForUsTitle")}
+            >
+              {t("navlinks.writeForUs")}
+            </a>
+          </li> -->
+        </ul>
+      </div>
+      <div class="sm:text-left">
+        <h3 class="text-xl text-gray-900 font-bold mb-4">
+          {t("footer.quickLinks")}
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/blog/"
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.aboutTitle")}
+            >
+              {t("navlinks.blog")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("about")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.aboutTitle")}
+            >
+              {t("about")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("contact")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.contactTitle")}
+            >
+              {t("contact")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("privacy")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("footer.privacyTitle")}
+            >
+              {t("privacy_policy")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath("terms")}
+              class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black"
+              title={t("terms_conditions")}
+            >
+              {t("footer.terms")}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col">
+        <h3 class="text-xl text-black font-bold mb-4">
+          {t("footer.followUs")}
+        </h3>
+        <div class="flex space-x-4 mb-2">
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener nofollow noreferrer"
+            class="hover:text-primary transition-colors"
+            title={t("footer.facebookTitle")}
+            aria-label={t("footer.facebookTitle")}
+          >
+            <Facebook className="h-6 w-6 text-gray-600 hover:text-primary hover:fill-black" />
+          </a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener nofollow noreferrer"
+            class="hover:text-primary transition-colors"
+            title={t("footer.twitterTitle")}
+            aria-label={t("footer.twitterTitle")}
+          >
+            <Twitter className="h-6 w-6 text-gray-600 hover:text-primary hover:fill-black" />
+          </a>
+        </div>
+        <a
+          href="mailto:support@invisiblesymbol.com"
+          class="relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current hover:after:animate-grow-line hover:text-black break-all"
+          title={t("footer.contactSupport")}
+        >
+          support@invisiblesymbol.com
+        </a>
+      </div>
+    </div>
+    <hr class="mb-6 border-gray-300" />
+    <div class="text-center">
+      <p>
+        &copy; {new Date().getFullYear()} InvisibleSymbol.com.{
+          t("footer.allRightsReserved")
+        }
+      </p>
+    </div>
+  </div>
+</footer>
