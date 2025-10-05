@@ -79,7 +79,7 @@ const fullOgImage = ogImage || `${siteUrl}/og-default.jpg`;
 		<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
 		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 	</head>
-	<body>
+	<body class="min-h-screen flex flex-col mx-auto">
 		<Header />
 		<main class="fade-in">
 			<slot />
@@ -88,14 +88,14 @@ const fullOgImage = ogImage || `${siteUrl}/og-default.jpg`;
 	</body>
 </html>
 
-<style is:global>
+<style>
 	/* CSS Reset */
 	*, *::before, *::after {
 		box-sizing: border-box;
 	}
 	
 	* {
-		margin: 0;
+		margin: 0 auto;
 	}
 	
 	body {

@@ -69,7 +69,10 @@ const getLocalizedPath = (path) => {
           <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
         </svg>
       </button>
-      <div id="language-menu" class="hidden absolute right-0 mt-2 w-44 bg-gray-900/95 text-white rounded-xl shadow-xl ring-1 ring-black/10 overflow-hidden animate-fade-in z-20">
+      <!-- <div id="language-menu" class="hidden absolute right-0 mt-2 w-44 bg-gray-900/95 text-white rounded-xl shadow-xl ring-1 ring-black/10 overflow-hidden animate-fade-in z-20">
+		<a href="/contact">
+			Contact Us
+		</a>
         {languages.map((langObj) => {
           const cleanPath = pathSegments.join("/");
           let newPath = langObj.code === "en"
@@ -79,7 +82,7 @@ const getLocalizedPath = (path) => {
             <a href={newPath} class="block px-5 py-2 text-sm hover:bg-primary hover:text-white transition-colors">{langObj.name}</a>
           );
         })}
-      </div>
+      </div> -->
     </div>
 
     <!-- Mobile Menu Button -->
@@ -124,7 +127,7 @@ const getLocalizedPath = (path) => {
         <a href={getLocalizedPath("unicode")} class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.unicode")}</a>
         <a href={getLocalizedPath("tools")} class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.tools")}</a>
         <a href="/blog/" class="block text-lg font-bold hover:text-primary transition-colors">{t("navlinks.blog")}</a>
-        <div class="mt-6 pt-4 border-t border-gray-200">
+        <!-- <div class="mt-6 pt-4 border-t border-gray-200">
           <p class="text-sm text-gray-500 mb-2">Select Language</p>
           {languages.map((language) => {
             let newPath = language.code === "en"
@@ -135,7 +138,7 @@ const getLocalizedPath = (path) => {
               <a href={newPath} class="block px-4 py-2 text-base rounded hover:bg-primary hover:text-white transition-colors">{language.name}</a>
             );
           })}
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
