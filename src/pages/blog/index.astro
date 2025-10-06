@@ -1,8 +1,10 @@
 ---
-import { getAllPosts, formatDate, getRelativeTime } from '../../lib/wordpress';
-import Layout from '../../layouts/BlogPost.astro';
+import { getAllPosts, formatDate, getRelativeTime } from '../../lib/wordpress.ts';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
 
-export const prerender = false; // Enable ISR
+export const prerender = false;
 
 const page = parseInt(Astro.url.searchParams.get('page') || '1');
 const { posts, totalPages, totalPosts } = await getAllPosts(page, 12);
@@ -12,7 +14,13 @@ const title = page > 1 ? `Blog - Page ${page}` : 'Blog';
 const description = 'Latest articles and insights from our blog.';
 ---
 
-<Layout title={title} description={description}>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
   <main class="blog-index">
     <div class="container">
       <header class="blog-header">
@@ -94,7 +102,9 @@ const description = 'Latest articles and insights from our blog.';
       )}
     </div>
   </main>
-</Layout>
+		<Footer />
+	</body>
+</html>
 
 <style>
   .blog-index {
